@@ -16,30 +16,31 @@ public class Cultivo {
 	private int cantCampesino;
 	private boolean estadoAmenaza;
 	
-	public Cultivo(String tipoCultivo, int tamano, double nitrogeno, double potasio, double fosforo, double irrigacion) {
+	public Cultivo(String tipoCultivo, int tamano, double nitrogeno, double potasio, double fosforo, double irrigacion, Terreno terreno) {
 		this.tipoCultivo = tipoCultivo; 
 		this.tamano = tamano; 
 		this.nitrogeno = nitrogeno; 
 		this.potasio = potasio; 
 		this.fosforo = fosforo; 
 		this.irrigacion = irrigacion;
+		this.terreno = terreno;
 	}
 	
 	// Se le pide al usuario ingresar el tipo de cultivo que quiere sembrar (dentro del Main), si es papa se ejecuta esta funcion o una de las siguientes:
-	static Cultivo crearPapa(int tamañoDeseado) {    
-		return (new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2));
+	static Cultivo crearPapa(int tamañoDeseado, Terreno terreno) {    
+		return (new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno));
 	}
-	static Cultivo crearSandia(int tamañoDeseado) {
-		return (new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5));
+	static Cultivo crearSandia(int tamañoDeseado, Terreno terreno) {
+		return (new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno));
 	}
-	static Cultivo crearMango(int tamañoDeseado) {
-		return (new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3));
+	static Cultivo crearMango(int tamañoDeseado, Terreno terreno) {
+		return (new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno));
 	}
-	static Cultivo crearBanano(int tamañoDeseado) {
-		return (new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6));
+	static Cultivo crearBanano(int tamañoDeseado, Terreno terreno) {
+		return (new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6, terreno));
 	}
-	static Cultivo crearFresa(int tamañoDeseado) {
-		return (new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4));
+	static Cultivo crearFresa(int tamañoDeseado, Terreno terreno) {
+		return (new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno));
 	}
 	
 	//Funciones relacionadas a la produccion
