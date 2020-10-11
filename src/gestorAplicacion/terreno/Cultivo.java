@@ -25,7 +25,7 @@ public class Cultivo {
 		this.irrigacion = irrigacion;
 	}
 	
-	// Se le pide al usuario ingresar el tipo (dentro del Main), si es papa se ejecuta esta funcion o una de las siguientes:
+	// Se le pide al usuario ingresar el tipo de cultivo que quiere sembrar (dentro del Main), si es papa se ejecuta esta funcion o una de las siguientes:
 	static Cultivo crearPapa(int tamañoDeseado) {    
 		return (new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2));
 	}
@@ -43,5 +43,10 @@ public class Cultivo {
 	}
 	
 	//Funciones relacionadas a la produccion
-	
+	public void sembrar(int cantidad) {
+		this.cantSembrada += cantidad;
+	}
+	public void cultivar() {
+		this.cantProducida += this.cantSembrada;
+	}
 }
