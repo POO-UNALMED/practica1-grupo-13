@@ -26,21 +26,32 @@ public class Cultivo {
 		this.terreno = terreno;
 	}
 	
-	// Se le pide al usuario ingresar el tipo de cultivo que quiere sembrar (dentro del Main), si es papa se ejecuta esta funcion o una de las siguientes:
+	// Se le pide al usuario ingresar el tipo de cultivo que quiere sembrar y el tamaño(dentro del Main), si es papa se ejecuta esta funcion o una de las siguientes:
+	// Se agrega el cultivo a el arreglo "cultivos" en terreno
 	static Cultivo crearPapa(int tamañoDeseado, Terreno terreno) {    
-		return (new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno));
+		Cultivo papa = new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno);
+		terreno.agregarCultivo(papa);
+		return (papa);
 	}
 	static Cultivo crearSandia(int tamañoDeseado, Terreno terreno) {
-		return (new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno));
+		Cultivo sandia = new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno);
+		terreno.agregarCultivo(sandia);
+		return (sandia);
 	}
 	static Cultivo crearMango(int tamañoDeseado, Terreno terreno) {
-		return (new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno));
+		Cultivo mango = new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno);
+		terreno.agregarCultivo(mango);
+		return (mango);
 	}
 	static Cultivo crearBanano(int tamañoDeseado, Terreno terreno) {
-		return (new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6, terreno));
+		Cultivo banano = new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6, terreno);
+		terreno.agregarCultivo(banano);
+		return (banano);
 	}
 	static Cultivo crearFresa(int tamañoDeseado, Terreno terreno) {
-		return (new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno));
+		Cultivo fresa = new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno);
+		terreno.agregarCultivo(fresa);
+		return (fresa);
 	}
 	
 	//Funciones relacionadas a la produccion

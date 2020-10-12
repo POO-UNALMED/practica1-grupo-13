@@ -8,5 +8,6 @@ public class Empleado { //tal vez sea abstracta
 	public Empleado(String nombre, int sueldo, int cedula) {
 		this.nombre = nombre; this.sueldo = sueldo; this.cedula = cedula;
 	}
-	public void renunciar() {}
+	public void renunciar() {
+	}
 }

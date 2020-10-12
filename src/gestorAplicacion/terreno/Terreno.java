@@ -15,4 +15,9 @@ public class Terreno {
 		this.id = id; this.cultivos = cultivos; this.tamano = tamano; this.nitrogenoDisponible = nitrogenoDisponible;
 		this.potasioDisponible = potasioDisponible; this.fosforoDisponible = fosforoDisponible; this.irrigacionActual = irrigacionActual;
 	}
+	
+	
+	public void agregarCultivo(Cultivo cultivo) {
+		this.cultivos.add(cultivo);
+	}
 }
