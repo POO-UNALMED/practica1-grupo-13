@@ -14,6 +14,6 @@ public class Administrador extends Empleado{
 	
 	public void Asignacion() {}
 	public void Despedir() {}
-	public void Contrtar() {} //Nuevo (no está en el diagrama)
+	public void Contratar() {} //Nuevo (no está en el diagrama)
 	public void ExaminarCultivos() {} //Examina los cultivos presentes en todos los terrenos 
 }

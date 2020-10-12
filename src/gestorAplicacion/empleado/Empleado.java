@@ -1,6 +1,6 @@
 package gestorAplicacion.empleado;
 
-public class Empleado { //tal vez sea abstracta 
+public class Empleado abstract { //tal vez sea abstracta 
 	protected String nombre;
 	protected int sueldo;
 	protected int cedula;
