@@ -8,7 +8,7 @@ public abstract class Empleado  {
 	public Empleado(String nombre, int sueldo, int cedula) {
 		this.nombre = nombre; this.sueldo = sueldo; this.cedula = cedula;
 	}
-	abstract public void renunciar();
+	abstract public void renunciar(Empleado empleado);
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
