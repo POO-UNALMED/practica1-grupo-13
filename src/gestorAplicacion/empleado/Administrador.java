@@ -12,6 +12,7 @@ public class Administrador extends Empleado{
 		this.campesinos = campesinos ; this.cultivos = cultivos;
 	}
 	
+	public void renunciar() {} //abstaracta 
 	public void Asignacion() {}
 	public void Despedir() {}
 	public void Contratar() {} //Nuevo (no está en el diagrama)

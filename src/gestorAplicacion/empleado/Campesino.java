@@ -11,5 +11,6 @@ public class Campesino extends Empleado{
 		this.cultivo = cultivo; this.administrador = administrador; 
 	}
 	
+	public void renunciar() {} //abstaracta 
 	//funciones
 }
