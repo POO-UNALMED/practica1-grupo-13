@@ -25,4 +25,7 @@ public class Administrador extends Empleado{
 		Scanner Sc = new Scanner(System.in);
 		
 	}
+	public static void agregarCultivo(Cultivo cultivo) {
+		cultivos.add(cultivo);
+	}
 }

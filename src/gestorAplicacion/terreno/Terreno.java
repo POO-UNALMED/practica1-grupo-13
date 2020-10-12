@@ -20,13 +20,7 @@ public class Terreno {
 		this.fosforoDisponible = fosforoDisponible; 
 		this.irrigacionActual = irrigacionActual;
 	}
-	//solicitar al usuario el id del terreno que quiere crear
-	public static Terreno crearTerreno(int id) {
-		return (new )
-	}
-	
-	
-	
+
 	
 	
 	// set cultivo

@@ -32,13 +32,31 @@ public class Cultivo {
 	// Se agrega el cultivo a el arreglo "cultivos" en terreno
 	// Comprobar capacidad en el Main
 	
-	// public grande
 	
+	
+	public static void crearCultivo(String tipo, int tamañoDeseado, Terreno terreno) {
+		if (tipo.equals("papa") && terreno.getCultivoPermitido.contains("papa")) {
+			Cultivo.crearPapa(tamañoDeseado, terreno);
+		}
+		else if (tipo.equals("sandia") && terreno.getCultivoPermitido.contains("sandia")) {
+			Cultivo.crearSandia(tamañoDeseado, terreno);
+		}
+		else if (tipo.equals("mango") && terreno.getCultivoPermitido.contains("mango")) {
+			Cultivo.crearMango(tamañoDeseado, terreno);
+		}
+		else if (tipo.equals("banano") && terreno.getCultivoPermitido.contains("banano")) {
+			Cultivo.crearBanano(tamañoDeseado, terreno);
+		}
+		else if (tipo.equals("fresa") && terreno.getCultivoPermitido.contains("fresa")) {
+			Cultivo.crearFresa(tamañoDeseado, terreno);
+		}	
+	}
 	
 	public static Cultivo crearPapa(int tamañoDeseado, Terreno terreno) {    
 		Cultivo papa = new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno);
 		terreno.agregarCultivo(papa);
 		terreno.agregarTipo("papa");
+		Administrador.
 		return (papa);
 	}
 	public static Cultivo crearSandia(int tamañoDeseado, Terreno terreno) {
@@ -73,11 +91,16 @@ public class Cultivo {
 	public void cultivar() {
 		this.cantProducida += this.cantSembrada;
 	}
+	
 	public Amenaza getAmenaza() {
 		return (this.amenaza);
 	}
 	public void setAmenaza(Amenaza amenazaNueva) {
 		this.amenaza = amenazaNueva;
 	}
+	
+//	public String toString() {
+//		return ("Cultivo de +" this.tipoCultivo + ", con tamaño de " + this.tamano);
+//	}
 	
 }
