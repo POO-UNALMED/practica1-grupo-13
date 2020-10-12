@@ -58,6 +58,7 @@ public class Terreno {
 		return cultivoPermitido;
 	}
 	
+	
 	//Cultivo papa = new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno);
 	//Cultivo sandia = new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno);
 	//Cultivo mango = new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno);
@@ -65,8 +66,12 @@ public class Terreno {
 	//Cultivo fresa = new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno);
 	
 	// set cultivo
+	public int getTamanoDisponible() {
+		return tamanoDisponible;
+	}
 	public void agregarCultivo(Cultivo cultivo) {
 		this.cultivos.add(cultivo);
+		tamanoDisponible -= cultivo.getTamano();
 	}
 	public void agregarTipo(String tipo) {
 		this.tipos.add(tipo);
