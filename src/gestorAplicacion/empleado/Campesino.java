@@ -26,14 +26,13 @@ public class Campesino extends Empleado{
 	public Administrador getAdministrador() {
 		return administrador;
 	}
-	public void renunciar(Campesino campesino) {
-		campesino = null;
-	}
-	public void renuncia() {
+	public void renunciar() {
 		double x = Math.random();
 		if (x > 0.2) {
-			campesino = null;
 			System.out.println("El campesino: " + this.getNombre() + " ha renunciado.");
 		}
+	}
+	public void renunciar(Campesino campesino) {
+		campesino = null;
 	}
 }
