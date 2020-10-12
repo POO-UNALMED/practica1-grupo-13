@@ -3,13 +3,8 @@ import gestorAplicacion.terreno.*;
 import java.util.*;
 
 public class Campesino extends Empleado{
-	private Cultivo cultivo; //en el que trabja
-	private Administrador administrador; //Se podría quitar
-	public Campesino(String nombre, int sueldo, int cedula, Cultivo cultivo, Administrador administrador) {
-		super(nombre, sueldo, cedula);
-		this.cultivo = cultivo; 
-		this.administrador = administrador; 
-	}
+	private Cultivo cultivo;
+	private Administrador administrador;
 	public Campesino(String nombre, int sueldo, int cedula, Administrador administrador) {
 		super(nombre, sueldo, cedula);
 		this.administrador = administrador; 
@@ -29,10 +24,14 @@ public class Campesino extends Empleado{
 	public void renunciar() {
 		double x = Math.random();
 		if (x > 0.2) {
-			System.out.println("El campesino: " + this.getNombre() + " ha renunciado.");
+			int numero = (int) (Math.random()*Administrador.getCampesinos().size());
+			String nombre = Administrador.getCampesinos().get(numero).getNombre();
+			Administrador.getCampesinos().remove(numero);
 		}
 	}
 	public void renunciar(Campesino campesino) {
+		int x = campesino.getCedula();
+		Administrador.getCampesinos().remove(Administrador.getCampesinos().indexOf(x));
 		campesino = null;
 	}
 }

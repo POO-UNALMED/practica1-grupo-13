@@ -10,22 +10,32 @@ public class Administrador extends Empleado{
 	private static LinkedList<Campesino> campesinos = new LinkedList<Campesino>();
 	public Administrador(String nombre, int sueldo, int cedula) {
 		super(nombre, sueldo, cedula);
-		this.campesinos = campesinos; 
-		this.cultivos = cultivos;
 	}
 	
 	public void renunciar() {System.out.println("Hola");} //abstaracta 
 	public void Asignacion() {}
 	public void Despedir() {}
-	public void Contratar(String nombre, int sueldo, int cedula) {
-		
-	} //Nuevo (no está en el diagrama)
+	public void Contratar() {
+		Scanner Sc = new Scanner(System.in);
+		String nombre = Sc.next();
+		int sueldo = Sc.nextInt();
+		int cedula = Sc.nextInt();
+		Campesino cedula = new Campesino(nombre, sueldo, cedula);
+	}
+	public static void agregarCultivos(Cultivo cultivo) {
+		cultivos.add(cultivo);
+	}
+	public static LinkedList<Cultivo> getCultivos(){
+		return cultivos;
+	}
+	public static void agregarCampesinos(Campesino campesino) {
+		campesinos.add(campesino);
+	}
+	public static LinkedList<Campesino> getCampesinos(){
+		return campesinos;
+	}
 	public void ExaminarCultivos() {} //Examina los cultivos presentes en todos los terrenos 
 	public static void main(String main[]) {
 		Scanner Sc = new Scanner(System.in);
-		
-	}
-	public static void agregarCultivo(Cultivo cultivo) {
-		cultivos.add(cultivo);
 	}
 }
