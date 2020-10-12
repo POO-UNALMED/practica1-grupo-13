@@ -12,12 +12,14 @@ public class Administrador extends Empleado{
 	public void renunciar() {System.out.println("Hola");} //abstaracta 
 	public void Asignacion() {}
 	public void Despedir() {}
+	public void ExaminarCultivos() {} //Examina los cultivos presentes en todos los terrenos 
 	public void Contratar() {
 		Scanner Sc = new Scanner(System.in);
 		String nombre = Sc.next();
 		int sueldo = Sc.nextInt();
 		int cedula = Sc.nextInt();
-		Campesino jaja = new Campesino(nombre, sueldo, cedula, admin);
+		Campesino campesino = new Campesino(nombre, sueldo, cedula);
+		agregarCampesinos(campesino);
 	}
 	public static void agregarCultivos(Cultivo cultivo) {
 		cultivos.add(cultivo);
@@ -31,9 +33,8 @@ public class Administrador extends Empleado{
 	public static LinkedList<Campesino> getCampesinos(){
 		return campesinos;
 	}
-	public void ExaminarCultivos() {} //Examina los cultivos presentes en todos los terrenos 
 	public static void main(String main[]) {
 		Scanner Sc = new Scanner(System.in);
-		Administrador admin = new Administrador(Sc.next(), Sc.nextInt(), Sc.nextInt());
+		Administrador admin = new Administrador("Jairo", 10, 10);
 	}
 }
