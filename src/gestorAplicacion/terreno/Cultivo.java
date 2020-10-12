@@ -53,35 +53,35 @@ public class Cultivo {
 		Cultivo papa = new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno);
 		terreno.agregarCultivo(papa);
 		terreno.agregarTipo("papa");
-		Administrador.agregarCultivo(papa);
+		Administrador.agregarCultivos(papa);
 		return (papa);
 	}
 	public static Cultivo crearSandia(int tamañoDeseado, Terreno terreno) {
 		Cultivo sandia = new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno);
 		terreno.agregarCultivo(sandia);
 		terreno.agregarTipo("sandia");
-		Administrador.agregarCultivo(sandia);
+		Administrador.agregarCultivos(sandia);
 		return (sandia);
 	}
 	public static Cultivo crearMango(int tamañoDeseado, Terreno terreno) {
 		Cultivo mango = new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno);
 		terreno.agregarCultivo(mango);
 		terreno.agregarTipo("mango");
-		Administrador.agregarCultivo(mango);
+		Administrador.agregarCultivos(mango);
 		return (mango);
 	}
 	public static Cultivo crearBanano(int tamañoDeseado, Terreno terreno) {
 		Cultivo banano = new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6, terreno);
 		terreno.agregarCultivo(banano);
 		terreno.agregarTipo("banano");
-		Administrador.agregarCultivo(banano);
+		Administrador.agregarCultivos(banano);
 		return (banano);
 	}
 	public static Cultivo crearFresa(int tamañoDeseado, Terreno terreno) {
 		Cultivo fresa = new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno);
 		terreno.agregarCultivo(fresa);
 		terreno.agregarTipo("fresa");
-		Administrador.agregarCultivo(fresa);
+		Administrador.agregarCultivos(fresa);
 		return (fresa);
 	}
 	
