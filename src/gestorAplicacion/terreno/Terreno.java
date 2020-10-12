@@ -22,7 +22,7 @@ public class Terreno {
 		this.fosforoDisponible = fosforoDisponible; 
 		this.irrigacionActual = irrigacionActual;
 		
-		this.getCultivoPermitido();
+
 	}
 	//solicitar al usuario el id del terreno que quiere crear
 	public void agregrarCultivoP(String cultivoP) { //cultivoPermitido
