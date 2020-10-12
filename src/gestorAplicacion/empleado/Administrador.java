@@ -1,8 +1,5 @@
 package gestorAplicacion.empleado;
 import java.util.*;
-
-import javax.xml.bind.Unmarshaller.Listener;
-
 import gestorAplicacion.terreno.*;
 
 public class Administrador extends Empleado{
@@ -20,7 +17,7 @@ public class Administrador extends Empleado{
 		String nombre = Sc.next();
 		int sueldo = Sc.nextInt();
 		int cedula = Sc.nextInt();
-		Campesino cedula = new Campesino(nombre, sueldo, cedula);
+		Campesino jaja = new Campesino(nombre, sueldo, cedula, admin);
 	}
 	public static void agregarCultivos(Cultivo cultivo) {
 		cultivos.add(cultivo);
@@ -37,5 +34,6 @@ public class Administrador extends Empleado{
 	public void ExaminarCultivos() {} //Examina los cultivos presentes en todos los terrenos 
 	public static void main(String main[]) {
 		Scanner Sc = new Scanner(System.in);
+		Administrador admin = new Administrador(Sc.next(), Sc.nextInt(), Sc.nextInt());
 	}
 }
