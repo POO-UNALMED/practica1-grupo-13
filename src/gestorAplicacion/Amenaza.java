@@ -14,4 +14,8 @@ public class Amenaza {
 	}
 	
 	public void atacarCultivo(Terreno terreno, Cultivo cultivo) {}
+	
+	public String getTipo() {
+		return this.tipoAmenaza;
+	}
 }
