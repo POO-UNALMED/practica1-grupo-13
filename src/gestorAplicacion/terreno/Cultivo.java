@@ -1,6 +1,7 @@
 package gestorAplicacion.terreno;
 
 import gestorAplicacion.Amenaza;
+import gestorAplicacion.empleado.Administrador;
 
 public class Cultivo {
 	
@@ -26,13 +27,9 @@ public class Cultivo {
 		this.terreno = terreno;
 	}
 	
-
-	
 	// Se le pide al usuario ingresar el tipo de cultivo que quiere sembrar y el tamaño(dentro del Main), si es papa se ejecuta esta funcion o una de las siguientes:
 	// Se agrega el cultivo a el arreglo "cultivos" en terreno
 	// Comprobar capacidad en el Main
-	
-	
 	
 	public static void crearCultivo(String tipo, int tamañoDeseado, Terreno terreno) {
 		if (tipo.equals("papa") && terreno.getCultivoPermitido.contains("papa")) {
@@ -56,31 +53,35 @@ public class Cultivo {
 		Cultivo papa = new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno);
 		terreno.agregarCultivo(papa);
 		terreno.agregarTipo("papa");
-		Administrador.
+		Administrador.agregarCultivo(papa);
 		return (papa);
 	}
 	public static Cultivo crearSandia(int tamañoDeseado, Terreno terreno) {
 		Cultivo sandia = new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno);
 		terreno.agregarCultivo(sandia);
 		terreno.agregarTipo("sandia");
+		Administrador.agregarCultivo(sandia);
 		return (sandia);
 	}
 	public static Cultivo crearMango(int tamañoDeseado, Terreno terreno) {
 		Cultivo mango = new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno);
 		terreno.agregarCultivo(mango);
 		terreno.agregarTipo("mango");
+		Administrador.agregarCultivo(mango);
 		return (mango);
 	}
 	public static Cultivo crearBanano(int tamañoDeseado, Terreno terreno) {
 		Cultivo banano = new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6, terreno);
 		terreno.agregarCultivo(banano);
 		terreno.agregarTipo("banano");
+		Administrador.agregarCultivo(banano);
 		return (banano);
 	}
 	public static Cultivo crearFresa(int tamañoDeseado, Terreno terreno) {
 		Cultivo fresa = new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno);
 		terreno.agregarCultivo(fresa);
 		terreno.agregarTipo("fresa");
+		Administrador.agregarCultivo(fresa);
 		return (fresa);
 	}
 	
