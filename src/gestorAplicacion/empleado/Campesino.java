@@ -5,7 +5,7 @@ import java.util.*;
 public class Campesino extends Empleado{
 	private Cultivo cultivo;
 	private Administrador administrador;
-	public Campesino(String nombre, int sueldo, int cedula) {
+	public Campesino(String nombre, int sueldo, int cedula, Administrador administrador) {
 		super(nombre, sueldo, cedula);
 	}
 	public void setCultivo(Cultivo cultivo) {
