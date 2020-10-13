@@ -21,9 +21,15 @@ public class Terreno {
 		this.potasioDisponible = potasioDisponible; 
 		this.fosforoDisponible = fosforoDisponible; 
 		this.irrigacionActual = irrigacionActual;
-		
-		
 	}
+	
+	public Terreno(int id, int tamano) {
+		this(id, tamano, Math.random(), Math.random(), Math.random(), Math.random()); //Administrador utiliza este
+		
+		// ***this.getCultivoPermitido()*** Necesitamos decir para cuáles cultivos es apropiado cada vez que se cree un terreno
+	}
+	
+	
 	//solicitar al usuario el id del terreno que quiere crear
 	public void agregrarCultivoP(String cultivoP) { //cultivoPermitido
 		this.cultivoPermitido.add(cultivoP);
