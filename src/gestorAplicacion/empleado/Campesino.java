@@ -7,6 +7,7 @@ public class Campesino extends Empleado{
 	private Administrador administrador;
 	public Campesino(String nombre, int sueldo, int cedula, Administrador administrador) {
 		super(nombre, sueldo, cedula);
+		this.administrador = administrador;
 	}
 	public void setCultivo(Cultivo cultivo) {
 		this.cultivo = cultivo;
@@ -22,15 +23,19 @@ public class Campesino extends Empleado{
 	}
 	public void renunciar() {
 		double x = Math.random();
-		if (x > 0.2) {
+		if ((x < 0.2) && (Administrador.getCampesinos().size() > 0)) {
 			int numero = (int) (Math.random()*Administrador.getCampesinos().size());
 			String nombre = Administrador.getCampesinos().get(numero).getNombre();
 			Administrador.getCampesinos().remove(numero);
+			System.out.println("El campesino " + nombre + " ha renunciado.");
 		}
 	}
-	public void renunciar(Campesino campesino) {
-		int x = campesino.getCedula();
-		Administrador.getCampesinos().remove(Administrador.getCampesinos().indexOf(x));
-		campesino = null;
+	public static void renunciar(int j) {
+		if(Administrador.getCampesinos().size() > 0) {
+			Administrador.getCampesinos().remove(j);
+		}
+		else {
+			System.out.println("Debe contratar primero campesinos pirobo bobo hpta");
+		}
 	}
 }
