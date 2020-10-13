@@ -33,19 +33,19 @@ public class Cultivo {
 	// Comprobar capacidad en el Main
 	
 	public static void crearCultivo(String tipo, int tamañoDeseado, Terreno terreno) {
-		if (tipo.equals("papa") && terreno.getCultivoPermitido().contains("papa")) {
+		if (tipo.equals("papa") && terreno.getCultivoPermitido().contains("papa") && terreno.getTamanoDisponible() >= tamañoDeseado) {
 			Cultivo.crearPapa(tamañoDeseado, terreno);
 		}
-		else if (tipo.equals("sandia") && terreno.getCultivoPermitido().contains("sandia")) {
+		else if (tipo.equals("sandia") && terreno.getCultivoPermitido().contains("sandia") && terreno.getTamanoDisponible() >= tamañoDeseado) {
 			Cultivo.crearSandia(tamañoDeseado, terreno);
 		}
-		else if (tipo.equals("mango") && terreno.getCultivoPermitido().contains("mango")) {
+		else if (tipo.equals("mango") && terreno.getCultivoPermitido().contains("mango") && terreno.getTamanoDisponible() >= tamañoDeseado) {
 			Cultivo.crearMango(tamañoDeseado, terreno);
 		}
-		else if (tipo.equals("banano") && terreno.getCultivoPermitido().contains("banano")) {
+		else if (tipo.equals("banano") && terreno.getCultivoPermitido().contains("banano") && terreno.getTamanoDisponible() >= tamañoDeseado ) {
 			Cultivo.crearBanano(tamañoDeseado, terreno);
 		}
-		else if (tipo.equals("fresa") && terreno.getCultivoPermitido().contains("fresa")) {
+		else if (tipo.equals("fresa") && terreno.getCultivoPermitido().contains("fresa") && terreno.getTamanoDisponible() >= tamañoDeseado) {
 			Cultivo.crearFresa(tamañoDeseado, terreno);
 		}	
 	}
@@ -99,6 +99,9 @@ public class Cultivo {
 	}
 	public void setAmenaza(Amenaza amenazaNueva) {
 		this.amenaza = amenazaNueva;
+	}
+	public int getTamano() {
+		return (this.tamano);
 	}
 	
 //	public String toString() {
