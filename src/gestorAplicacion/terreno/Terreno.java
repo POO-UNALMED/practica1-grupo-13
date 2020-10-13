@@ -21,14 +21,20 @@ public class Terreno {
 		this.potasioDisponible = potasioDisponible; 
 		this.fosforoDisponible = fosforoDisponible; 
 		this.irrigacionActual = irrigacionActual;
-		
-
 	}
+	
+	public Terreno(int id, int tamano) {
+		this(id, tamano, Math.random(), Math.random(), Math.random(), Math.random()); //Administrador utiliza este
+		
+		// ***this.getCultivoPermitido()*** Necesitamos decir para cuáles cultivos es apropiado cada vez que se cree un terreno
+	}
+	
+	
 	//solicitar al usuario el id del terreno que quiere crear
 	public void agregrarCultivoP(String cultivoP) { //cultivoPermitido
 		this.cultivoPermitido.add(cultivoP);
 	}
-	public LinkedList<String> getCultivoPermitido(){ //Se ejecuta en cultivo y en funciones de campesino
+	public LinkedList<String> getCultivoPermitido() { //Se ejecuta en cultivo y en funciones de campesino
 		if(nitrogenoDisponible >= 0.3 && potasioDisponible >= 0.4 && fosforoDisponible >= 0.4 && irrigacionActual >= 0.2) {
 			if(cultivoPermitido.contains("papa") == false) {
 				cultivoPermitido.add("papa");
