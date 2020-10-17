@@ -9,7 +9,7 @@ public class Campesino extends Empleado{
 	}
 	public void renunciar() {
 		double x = Math.random();
-		if ((x < 0.2) && (Administrador.getCampesinos().size() > 0)) {
+		if ((x < 0.2) && (Terreno.getTerreno(). > 0)) {
 			int numero = (int) (Math.random()*Administrador.getCampesinos().size());
 			String nombre = Administrador.getCampesinos().get(numero).getNombre();
 			Administrador.getCampesinos().remove(numero);
