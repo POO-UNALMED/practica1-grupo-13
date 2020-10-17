@@ -88,4 +88,7 @@ public class Terreno {
 	public void agregarCampesino(Campesino campesino) {
 		this.campesinos.add(campesino);
 	}
+	public Agronomo getAgronomo() {
+		return (this.agronomo);
+	}
 }
