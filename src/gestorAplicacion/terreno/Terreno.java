@@ -4,12 +4,12 @@ import gestorAplicacion.empleado.*;
 import java.util.*;
 
 public class Terreno {
-	private final int id; //Nuestro final
+	private final String id; //Nuestro final
 	private LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();
 	private LinkedList<String> tipos = new LinkedList<String>(); //Tipos de cultivo presentes en el terreno 
 	private LinkedList<String> cultivoPermitido = new LinkedList<String>();
 	private LinkedList<Campesino> campesinos = new LinkedList<Campesino>(); //Campesinos que tabajan en el terreno
-	private static LinkedList<Integer> terrenosTotales = new LinkedList<Integer>(); // Se usa para mostrar al usuario todos en los que puede sembrar (muestra sus ids)
+	private static LinkedList<Terreno> terrenosTotales = new LinkedList<Terreno>(); // Se usa para mostrar al usuario todos en los que puede sembrar
 	private Agronomo agronomo; //Agrónomo que trabaja en el terreno
 	private int tamano;
 	private int tamanoDisponible;
@@ -18,17 +18,17 @@ public class Terreno {
 	private double fosforoDisponible;
 	private double irrigacionActual;
 	
-	public Terreno(int id, int tamano, double nitrogenoDisponible, double potasioDisponible, double fosforoDisponible, double irrigacionActual) {
+	public Terreno(String id, int tamano, double nitrogenoDisponible, double potasioDisponible, double fosforoDisponible, double irrigacionActual) {
 		this.id = id; 
 		this.tamano = tamano;
 		this.nitrogenoDisponible = nitrogenoDisponible;
 		this.potasioDisponible = potasioDisponible; 
 		this.fosforoDisponible = fosforoDisponible; 
 		this.irrigacionActual = irrigacionActual;
-		terrenosTotales.add(id);
+		terrenosTotales.add(this);       //Preguntar
 	}
 	
-	public Terreno(int id, int tamano) {   //Debe ser estática !!!
+	public Terreno(String id, int tamano) {   //Debe ser estática !!!
 		this(id, tamano, Math.random(), Math.random(), Math.random(), Math.random()); //Administrador utiliza este
 		// ***this.getCultivoPermitido()*** Necesitamos decir para cuáles cultivos es apropiado cada vez que se cree un terreno
 	}
@@ -91,5 +91,15 @@ public class Terreno {
 	}
 	public Agronomo getAgronomo() {
 		return (this.agronomo);
+	}
+	public String getId() {
+		return (this.id);
+	}
+	public String mostrarTerrenos() {       //saca el linkedList terrenosTotales, y le muestra al usuario sus ids
+		String muestra = "";
+		for (int i = 0; i < terrenosTotales.size(); i ++){
+			muestra = muestra + terrenosTotales.get(i).getId() + " ";
+		}
+		return(muestra);
 	}
 }
