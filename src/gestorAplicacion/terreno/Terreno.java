@@ -105,6 +105,15 @@ public class Terreno{
 		return terrenosTotales;
 	}
 	
+	public String cultivosPermitidos() { //se utiliza en cultivo 
+		ListIterator iterador = cultivoPermitido.listIterator();
+		StringBuffer lista = new StringBuffer("Los cultivos que permite el terreno son:\n");
+		while(iterador.hasNext()) {
+			String tipo = (String)iterador.next();
+			lista.append(tipo + "\n");
+		}
+		return lista.toString();
+	}
 	
 	public int getTamanoDisponible() {
 		return tamanoDisponible;
