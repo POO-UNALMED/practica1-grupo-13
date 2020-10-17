@@ -3,10 +3,8 @@ import gestorAplicacion.terreno.*;
 import java.util.*;
 
 public class Campesino extends Empleado{
-	private Terreno terreno;
 	public Campesino(String nombre, int sueldo, int cedula, Terreno terreno) {
-		super(nombre, sueldo, cedula);
-		this.terreno = terreno;
+		super(nombre, sueldo, cedula, terreno);
 		terreno.agregarCampesino(this);
 	}
 	public void setTerreno(Terreno terreno) {

@@ -1,12 +1,13 @@
 package gestorAplicacion.empleado;
-
+import gestorAplicacion.terreno.*;
 public abstract class Empleado  {
 	protected String nombre;
 	protected int sueldo;
 	protected int cedula;
+	protected Terreno terreno;
 	
-	public Empleado(String nombre, int sueldo, int cedula) {
-		this.nombre = nombre; this.sueldo = sueldo; this.cedula = cedula;
+	public Empleado(String nombre, int sueldo, int cedula, Terreno terreno) {
+		this.nombre = nombre; this.sueldo = sueldo; this.cedula = cedula; this.terreno = terreno;
 	}
 	abstract public void renunciar();
 	public void setNombre(String nombre) {

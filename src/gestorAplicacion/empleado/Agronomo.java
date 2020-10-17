@@ -5,15 +5,10 @@ import java.util.Scanner;
 import gestorAplicacion.terreno.*;
 
 public class Agronomo extends Empleado{
-	private Terreno terreno; //Terreno en el que trabaja
-	private LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();
-	private LinkedList<Campesino> campesinos = new LinkedList<Campesino>();
-	
+	private LinkedList<Cultivo> agronomos = new LinkedList<Cultivo>();
 	public Agronomo(String nombre, int sueldo, int cedula, Terreno terreno) {
-		super(nombre, sueldo, cedula);
-		this.terreno = terreno; 
+		super(nombre, sueldo, cedula, terreno);
 	}
-	public void asignacion() {}
 	public void despedir() {
 		for(int i = 0; i <Administrador.getCampesinos().size(); i++) {
 			System.out.println((i+1) + ". " + Administrador.getCampesinos().get(i).getNombre() + " con cédula: " + Administrador.getCampesinos().get(i).getCedula());
