@@ -8,6 +8,7 @@ public class Agronomo extends Empleado{
 	private static LinkedList<Cultivo> agronomos = new LinkedList<Cultivo>();
 	public Agronomo(String nombre, int sueldo, int cedula, Terreno terreno) {
 		super(nombre, sueldo, cedula, terreno);
+		terreno.setAgronomo(this);
 	}
 	public void examinarCultivos() {} //Examina los cultivos presentes en todos los terrenos
 	public void renunciar() {
