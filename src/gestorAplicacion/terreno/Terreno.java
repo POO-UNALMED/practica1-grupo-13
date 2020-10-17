@@ -9,6 +9,7 @@ public class Terreno {
 	private LinkedList<String> tipos = new LinkedList<String>(); //Tipos de cultivo presentes en el terreno 
 	private LinkedList<String> cultivoPermitido = new LinkedList<String>();
 	private LinkedList<Campesino> campesinos = new LinkedList<Campesino>(); //Campesinos que tabajan en el terreno
+	private LinkedList<Integer> terrenosTotales = new LinkedList<Integer>(); // Se usa para mostrar al usuario todos en los que puede sembrar (muestra sus ids)
 	private Agronomo agronomo; //Agrónomo que trabaja en el terreno
 	private int tamano;
 	private int tamanoDisponible;
@@ -24,11 +25,11 @@ public class Terreno {
 		this.potasioDisponible = potasioDisponible; 
 		this.fosforoDisponible = fosforoDisponible; 
 		this.irrigacionActual = irrigacionActual;
+		terrenosTotales.add(id);
 	}
 	
-	public Terreno(int id, int tamano) {
+	public Terreno(int id, int tamano) {   //Debe ser estática !!!
 		this(id, tamano, Math.random(), Math.random(), Math.random(), Math.random()); //Administrador utiliza este
-		
 		// ***this.getCultivoPermitido()*** Necesitamos decir para cuáles cultivos es apropiado cada vez que se cree un terreno
 	}
 	
