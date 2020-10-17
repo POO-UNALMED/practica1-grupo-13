@@ -11,7 +11,7 @@ public class Agronomo extends Empleado{
 	
 	public Agronomo(String nombre, int sueldo, int cedula, Terreno terreno) {
 		super(nombre, sueldo, cedula);
-		this.terreno = terreno;
+		this.terreno = terreno; 
 	}
 	public void asignacion() {}
 	public void despedir() {
@@ -26,16 +26,16 @@ public class Agronomo extends Empleado{
 		Campesino campesino = new Campesino(nombre, sueldo, cedula, this); //el admin invoca el contratar
 		agregarCampesinos(campesino);
 	}
-	public static void agregarCultivos(Cultivo cultivo) {
+	public void agregarCultivos(Cultivo cultivo) {
 		cultivos.add(cultivo);
 	}
-	public static LinkedList<Cultivo> getCultivos(){
+	public LinkedList<Cultivo> getCultivos(){
 		return cultivos;
 	}
-	public static void agregarCampesinos(Campesino campesino) {
+	public void agregarCampesinos(Campesino campesino) {
 		campesinos.add(campesino);
 	}
-	public static LinkedList<Campesino> getCampesinos(){
+	public  LinkedList<Campesino> getCampesinos(){
 		return campesinos;
 	}
 }

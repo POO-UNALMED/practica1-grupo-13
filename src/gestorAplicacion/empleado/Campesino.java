@@ -7,18 +7,13 @@ public class Campesino extends Empleado{
 	public Campesino(String nombre, int sueldo, int cedula, Terreno terreno) {
 		super(nombre, sueldo, cedula);
 		this.terreno = terreno;
+		terreno.agregarCampesino(this);
 	}
-	public void setCultivo(Cultivo cultivo) {
-		this.cultivo = cultivo;
+	public void setTerreno(Terreno terreno) {
+		this.terreno = terreno;
 	}
-	public Cultivo getCultivo() {
-		return cultivo;
-	}
-	public void setAdministrador(Administrador administrador) {
-		this.administrador = administrador;
-	}
-	public Administrador getAdministrador() {
-		return administrador;
+	public Terreno getTerreno() {
+		return terreno;
 	}
 	public void renunciar() {
 		double x = Math.random();
@@ -38,3 +33,4 @@ public class Campesino extends Empleado{
 		}
 	}
 }
+ 

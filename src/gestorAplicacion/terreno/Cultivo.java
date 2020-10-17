@@ -3,10 +3,11 @@ import java.util.*;
 import java.lang.Comparable; //Interface Comparable
 
 import gestorAplicacion.Amenaza;
-import gestorAplicacion.empleado.Administrador;
+import gestorAplicacion.empleado.Administrador; //Esto se debe quitar 
 
 public class Cultivo implements Comparable<Cultivo>{
 	
+	private static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// Faltan crear funciones-- Sergio 
 	private String tipoCultivo;
 	private int tamano;
 	private Amenaza amenaza;
@@ -27,6 +28,7 @@ public class Cultivo implements Comparable<Cultivo>{
 		this.fosforo = fosforo; 
 		this.irrigacion = irrigacion;
 		this.terreno = terreno;
+		this.agregarCultivo(this); //Agrego cultivos cada vez que se cree uno
 	}
 	
 	// Se le pide al usuario ingresar el tipo de cultivo que quiere sembrar y el tamaño(dentro del Main), si es papa se ejecuta esta funcion o una de las siguientes:
@@ -111,6 +113,10 @@ public class Cultivo implements Comparable<Cultivo>{
 	}
 	public int compareTo(Cultivo cultivo) { //Sergio 
 		return this.getTipoCultivo().compareTo(cultivo.getTipoCultivo());
+	}
+	
+	public void agregarCultivo(Cultivo cultivo) { //Sergio
+		cultivos.add(cultivo);
 	}
 //	public String toString() {
 //		return ("Cultivo de +" this.tipoCultivo + ", con tamaño de " + this.tamano);

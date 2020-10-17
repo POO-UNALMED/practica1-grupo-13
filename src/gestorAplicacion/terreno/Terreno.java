@@ -4,7 +4,7 @@ import gestorAplicacion.empleado.*;
 import java.util.*;
 
 public class Terreno {
-	private int id;
+	private final int id; //Nuestro final
 	private LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();
 	private LinkedList<String> tipos = new LinkedList<String>(); //Tipos de cultivo presentes en el terreno 
 	private LinkedList<String> cultivoPermitido = new LinkedList<String>();
@@ -85,5 +85,7 @@ public class Terreno {
 	public void agregarTipo(String tipo) {
 		this.tipos.add(tipo);
 	}
-	
+	public void agregarCampesino(Campesino campesino) {
+		this.campesinos.add(campesino);
+	}
 }
