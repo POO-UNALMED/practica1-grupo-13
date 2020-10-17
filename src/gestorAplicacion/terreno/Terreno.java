@@ -102,5 +102,4 @@ public class Terreno {
 		}
 		return(muestra);
 	}
-	public static 
 }
