@@ -121,7 +121,9 @@ public class Terreno{
 	public Agronomo getAgronomo() {
 		return this.agronomo;
 	}
-	
+	public void setAgronomo() {
+		this.agronomo = agronomo;
+	}
 	public String getId() {
 		return this.id;
 	}
