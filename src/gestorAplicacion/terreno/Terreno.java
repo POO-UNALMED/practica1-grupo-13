@@ -102,4 +102,7 @@ public class Terreno {
 		}
 		return(muestra);
 	}
+	public LinkedList<Terreno> getTerreno(){
+		return (terrenosTotales);
+	}
 }
