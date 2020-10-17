@@ -28,4 +28,10 @@ public abstract class Empleado  {
 	public void setCedula(int cedula) {
 		this.cedula = cedula;
 	}
+	public void setTerreno(Terreno terreno) {
+		this.terreno = terreno;
+	}
+	public Terreno getTerreno() {
+		return this.terreno;
+	}
 }

@@ -5,7 +5,7 @@ import java.lang.Comparable; //Interface Comparable
 import gestorAplicacion.Amenaza;
 // import gestorAplicacion.empleado.Administrador; //Esto se debe quitar 
 
-public class Cultivo implements Comparable<Cultivo>{
+public class Cultivo {
 	
 	private static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// Faltan crear funciones-- Sergio 
 	private String tipoCultivo;
@@ -36,19 +36,19 @@ public class Cultivo implements Comparable<Cultivo>{
 	// Comprobar capacidad en el Main
 	
 	public static void crearCultivo(String tipo, int tamañoDeseado, Terreno terreno) {
-		if (tipo.equals("papa") && terreno.getCultivoPermitido().contains("papa") && terreno.getTamanoDisponible() >= tamañoDeseado) {
+		if (tipo.equals("papa") && terreno.getCultivoPermitido().contains("papa") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("papa") == false ) {
 			Cultivo.crearPapa(tamañoDeseado, terreno);
 		}
-		else if (tipo.equals("sandia") && terreno.getCultivoPermitido().contains("sandia") && terreno.getTamanoDisponible() >= tamañoDeseado) {
+		else if (tipo.equals("sandia") && terreno.getCultivoPermitido().contains("sandia") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("sandia") == false) {
 			Cultivo.crearSandia(tamañoDeseado, terreno);
 		}
-		else if (tipo.equals("mango") && terreno.getCultivoPermitido().contains("mango") && terreno.getTamanoDisponible() >= tamañoDeseado) {
+		else if (tipo.equals("mango") && terreno.getCultivoPermitido().contains("mango") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("mango") == false) {
 			Cultivo.crearMango(tamañoDeseado, terreno);
 		}
-		else if (tipo.equals("banano") && terreno.getCultivoPermitido().contains("banano") && terreno.getTamanoDisponible() >= tamañoDeseado ) {
+		else if (tipo.equals("banano") && terreno.getCultivoPermitido().contains("banano") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("banano") == false) {
 			Cultivo.crearBanano(tamañoDeseado, terreno);
 		}
-		else if (tipo.equals("fresa") && terreno.getCultivoPermitido().contains("fresa") && terreno.getTamanoDisponible() >= tamañoDeseado) {
+		else if (tipo.equals("fresa") && terreno.getCultivoPermitido().contains("fresa") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("fresa") == false) {
 			Cultivo.crearFresa(tamañoDeseado, terreno);
 		}	
 	}
@@ -57,35 +57,35 @@ public class Cultivo implements Comparable<Cultivo>{
 		Cultivo papa = new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno);
 		terreno.agregarCultivo(papa);
 		terreno.agregarTipo("papa");
-		terreno.getAgronomo().agregarCultivos(papa);
+		cultivos.add(papa);
 		return (papa);
 	}
 	public static Cultivo crearSandia(int tamañoDeseado, Terreno terreno) {
 		Cultivo sandia = new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno);
 		terreno.agregarCultivo(sandia);
 		terreno.agregarTipo("sandia");
-		terreno.getAgronomo().agregarCultivos(sandia);
+		cultivos.add(sandia);
 		return (sandia);
 	}
 	public static Cultivo crearMango(int tamañoDeseado, Terreno terreno) {
 		Cultivo mango = new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno);
 		terreno.agregarCultivo(mango);
 		terreno.agregarTipo("mango");
-		terreno.getAgronomo().agregarCultivos(mango);
+		cultivos.add(mango);
 		return (mango);
 	}
 	public static Cultivo crearBanano(int tamañoDeseado, Terreno terreno) {
 		Cultivo banano = new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6, terreno);
 		terreno.agregarCultivo(banano);
 		terreno.agregarTipo("banano");
-		terreno.getAgronomo().agregarCultivos(banano);
+		cultivos.add(banano);
 		return (banano);
 	}
 	public static Cultivo crearFresa(int tamañoDeseado, Terreno terreno) {
 		Cultivo fresa = new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno);
 		terreno.agregarCultivo(fresa);
 		terreno.agregarTipo("fresa");
-		terreno.getAgronomo().agregarCultivos(fresa);
+		cultivos.add(fresa);
 		return (fresa);
 	}
 	
@@ -110,9 +110,6 @@ public class Cultivo implements Comparable<Cultivo>{
 	
 	public String getTipoCultivo() { //Sergio 
 		return this.tipoCultivo;
-	}
-	public int compareTo(Cultivo cultivo) { //Sergio 
-		return this.getTipoCultivo().compareTo(cultivo.getTipoCultivo());
 	}
 	
 	public void agregarCultivo(Cultivo cultivo) { //Sergio
