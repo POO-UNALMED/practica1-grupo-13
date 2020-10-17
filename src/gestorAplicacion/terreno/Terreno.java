@@ -1,12 +1,15 @@
 package gestorAplicacion.terreno;
+import gestorAplicacion.empleado.*;
 
 import java.util.*;
 
 public class Terreno {
 	private int id;
 	private LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();
-	private LinkedList<String> tipos = new LinkedList<String>();
+	private LinkedList<String> tipos = new LinkedList<String>(); //Tipos de cultivo presentes en el terreno 
 	private LinkedList<String> cultivoPermitido = new LinkedList<String>();
+	private LinkedList<Campesino> campesinos = new LinkedList<Campesino>(); //Campesinos que tabajan en el terreno
+	private Agronomo agronomo; //Agrónomo que trabaja en el terreno
 	private int tamano;
 	private int tamanoDisponible;
 	private double nitrogenoDisponible;

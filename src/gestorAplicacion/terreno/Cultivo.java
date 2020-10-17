@@ -1,10 +1,11 @@
 package gestorAplicacion.terreno;
 import java.util.*;
+import java.lang.Comparable; //Interface Comparable
 
 import gestorAplicacion.Amenaza;
 import gestorAplicacion.empleado.Administrador;
 
-public class Cultivo {
+public class Cultivo implements Comparable<Cultivo>{
 	
 	private String tipoCultivo;
 	private int tamano;
@@ -104,6 +105,13 @@ public class Cultivo {
 		return (this.tamano);
 	}
 	
+	
+	public String getTipoCultivo() { //Sergio 
+		return this.tipoCultivo;
+	}
+	public int compareTo(Cultivo cultivo) { //Sergio 
+		return this.getTipoCultivo().compareTo(cultivo.getTipoCultivo());
+	}
 //	public String toString() {
 //		return ("Cultivo de +" this.tipoCultivo + ", con tamaño de " + this.tamano);
 //	}
