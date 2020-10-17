@@ -25,7 +25,7 @@ public class Terreno{
 		this.potasioDisponible = potasioDisponible; 
 		this.fosforoDisponible = fosforoDisponible; 
 		this.irrigacionActual = irrigacionActual;
-		terrenosTotales.add(this);       //Preguntar
+		terrenosTotales.add(this);       //Agrego terreno creado
 	}
 	
 	public Terreno(String id, int tamano) {   //Debe ser estática !!!
@@ -75,38 +75,44 @@ public class Terreno{
 	
 	// set cultivo
 
+	public void agregrarCultivoP(String cultivoP) { //cultivoPermitido
+		this.cultivoPermitido.add(cultivoP);
+	}
 	
 	public LinkedList<Campesino> getCampesinos(){
 		return this.campesinos;
 	}
+	public void agregarCampesino(Campesino campesino) {
+		this.campesinos.add(campesino);
+	}
+	
 	public LinkedList<String> getTipos(){
 		return this.tipos;
 	}
+	public void agregarTipo(String tipo) {
+		this.tipos.add(tipo);
+	}
+	
 	public LinkedList<Cultivo> getCultivos(){
 		return this.cultivos;
-	}
-	public static LinkedList<Terreno> getTerreno(){
-		return terrenosTotales;
 	}
 	public void agregarCultivo(Cultivo cultivo) {
 		this.cultivos.add(cultivo);
 		tamanoDisponible -= cultivo.getTamano();
 	}
-	public void agregarTipo(String tipo) {
-		this.tipos.add(tipo);
+	
+	public static LinkedList<Terreno> getTerreno(){
+		return terrenosTotales;
 	}
-	public void agregarCampesino(Campesino campesino) {
-		this.campesinos.add(campesino);
-	}
+	
+	
 	public int getTamanoDisponible() {
 		return tamanoDisponible;
 	}
 	public Agronomo getAgronomo() {
 		return this.agronomo;
 	}
-	public void agregrarCultivoP(String cultivoP) { //cultivoPermitido
-		this.cultivoPermitido.add(cultivoP);
-	}
+	
 	public String getId() {
 		return this.id;
 	}
