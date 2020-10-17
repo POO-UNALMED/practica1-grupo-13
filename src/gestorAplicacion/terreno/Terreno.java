@@ -3,7 +3,7 @@ import gestorAplicacion.empleado.*;
 
 import java.util.*;
 
-public class Terreno {
+public class Terreno{
 	private final String id; //Nuestro final
 	private LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();
 	private LinkedList<String> tipos = new LinkedList<String>(); //Tipos de cultivo presentes en el terreno 
@@ -35,9 +35,7 @@ public class Terreno {
 	
 	
 	//solicitar al usuario el id del terreno que quiere crear
-	public void agregrarCultivoP(String cultivoP) { //cultivoPermitido
-		this.cultivoPermitido.add(cultivoP);
-	}
+	
 	public LinkedList<String> getCultivoPermitido() { //Se ejecuta en cultivo y en funciones de campesino
 		if(nitrogenoDisponible >= 0.3 && potasioDisponible >= 0.4 && fosforoDisponible >= 0.4 && irrigacionActual >= 0.2) {
 			if(cultivoPermitido.contains("papa") == false) {
@@ -76,8 +74,19 @@ public class Terreno {
 	//Cultivo fresa = new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno);
 	
 	// set cultivo
-	public int getTamanoDisponible() {
-		return tamanoDisponible;
+
+	
+	public LinkedList<Campesino> getCampesinos(){
+		return this.campesinos;
+	}
+	public LinkedList<String> getTipos(){
+		return this.tipos;
+	}
+	public LinkedList<Cultivo> getCultivos(){
+		return this.cultivos;
+	}
+	public static LinkedList<Terreno> getTerreno(){
+		return terrenosTotales;
 	}
 	public void agregarCultivo(Cultivo cultivo) {
 		this.cultivos.add(cultivo);
@@ -89,11 +98,17 @@ public class Terreno {
 	public void agregarCampesino(Campesino campesino) {
 		this.campesinos.add(campesino);
 	}
+	public int getTamanoDisponible() {
+		return tamanoDisponible;
+	}
 	public Agronomo getAgronomo() {
-		return (this.agronomo);
+		return this.agronomo;
+	}
+	public void agregrarCultivoP(String cultivoP) { //cultivoPermitido
+		this.cultivoPermitido.add(cultivoP);
 	}
 	public String getId() {
-		return (this.id);
+		return this.id;
 	}
 	public static String mostrarTerrenos() {       //saca el linkedList terrenosTotales, y le muestra al usuario sus ids
 		String muestra = "";
@@ -102,7 +117,5 @@ public class Terreno {
 		}
 		return(muestra);
 	}
-	public static LinkedList<Terreno> getTerreno(){
-		return (terrenosTotales);
-	}
+	
 }
