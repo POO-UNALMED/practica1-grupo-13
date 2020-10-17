@@ -1,5 +1,6 @@
 package uiMain;
-import java.util.Scanner;
+import java.util.*;
+import gestorAplicacion.empleado.*;
 import gestorAplicacion.terreno.*;
 
 public class Usuario {
@@ -16,8 +17,8 @@ public class Usuario {
 		System.out.println("1. Campesino");
 		System.out.println("2. Agronomo");
 		System.out.println("3. Volver");
-		opcionElegida = Sc.nextInt();
-		if((opcionElegida == 1) || (opcionElegida == 2) && (Terreno.)) {
+		opcionElegida = readInt();
+		if((opcionElegida == 1) || (opcionElegida == 2) && (Terreno.getTerreno().size() > 0)) {
 			String nombre; int sueldo; int cedula; int terreno;
 			System.out.println("Ingrese el nombre:");
 			nombre = readLine();
@@ -27,13 +28,46 @@ public class Usuario {
 			cedula = readInt();
 			System.out.println("Seleccione un terreno para vincular al trabajador");
 			System.out.println(Terreno.mostrarTerrenos());
-			terreno = readInt();
+			terreno = readInt() - 1;
+			if(opcionElegida == 1) {
+				Campesino campe = new Campesino(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
+				System.out.println("Se ha creado un campesino con datos:");
+				System.out.println(campe);
+			}
+			else if(opcionElegida == 2) {
+				if(Terreno.getTerreno().get(terreno).getAgronomo().equals(null)) {
+					Agronomo agro = new Agronomo(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
+					System.out.println("Se ha creado un agronomo con datos:");
+					
+				}
+				else {
+					System.out.println("Este terreno ya tiene un agronomo vinculado");
+				}
+			}
 		}
-		else {
+		else if((opcionElegida == 1) || (opcionElegida == 2) && (Terreno.getTerreno().size() == 0)){
+			System.out.println("Debe agregar primero un terreno para vincular trabajadores");
 		}
+		else {}
+	}
+	public static void despedir() {
+		int opcionElegida;
+		System.out.println("¿Qué trabajador desea despedir?");
+		System.out.println("1. Campesino");
+		System.out.println("2. Agronomo");
+		System.out.println("3. Volver");
+		opcionElegida = readInt();
+		if(opcionElegida == 1) {
+			if()
+		}
+		
+	}
+	public static int produccion() {
+		return 1;
 	}
 	public static void main(String args[]) {
-		Terreno ter = new Terreno("Cola", 2);
+		new Terreno("Cola", 2);
+		new Terreno("bola", 2);
 		int opcionElegida = 0;
 		do {
 			System.out.println("Selecciona una funcion");
@@ -48,6 +82,9 @@ public class Usuario {
 			opcionElegida = Sc.nextInt();
 			switch (opcionElegida) {
 				case 1: contratar();break;
+				case 2: despedir(); break;
+				case 3: produccion();
+				case 8: break;
 					
 			}
 		}while(opcionElegida != 8);
