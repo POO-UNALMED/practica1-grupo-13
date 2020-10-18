@@ -58,8 +58,10 @@ public class Cultivo {
 		else if (tipo.equals("fresa") && terreno.getCultivoPermitido().contains("fresa") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("fresa") == false) {
 			Cultivo.crearFresa(tamañoDeseado, terreno);
 			return ("Se ha creado exitosamente");
-		}	
-			return ("No se ha podido crear");
+		}else{
+			return ("Este cultivo ya estaba creado en este terreno o este tipo no es valido");
+		}
+			
 	}
 	
 	public static void crearPapa(int tamañoDeseado, Terreno terreno) {    
