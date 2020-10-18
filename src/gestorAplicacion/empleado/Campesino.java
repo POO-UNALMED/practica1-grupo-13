@@ -37,19 +37,18 @@ public class Campesino extends Empleado{
 	public void recolectar(Cultivo cultivo) {
 		//Modificar el size disponible del terreno que contiene el cultivo que se esta recolectando
 		int tempSize = cultivo.getTamano();
-		int tempGroundSizeAvailable = cultivo.getTerreno().getTamanoDisponible();
-		cultivo.getTerreno().setTamanoDisponible(tempGroundSizeAvailable+=tempSize);
+		cultivo.getTerreno().setTamanoDisponible(tempSize);
 		
 		//Sumar la candidad producida por tipo 
 		String tempTypeCrop = cultivo.getTipoCultivo();
 		switch(tempTypeCrop) {
-		case "papas": Cultivo.setPapaProducida(tempSize); break;
-		case "sandias": Cultivo.setSandiaProducida(tempSize); break;
+		case "papa": Cultivo.setPapaProducida(tempSize); break;
+		case "sandia": Cultivo.setSandiaProducida(tempSize); break;
 		case "mango": Cultivo.setMangoProducido(tempSize); break;
 		case "banano": Cultivo.setBananoProducido(tempSize); break;
-		case "fresas": Cultivo.setFresaProducida(tempSize); break;
+		case "fresa": Cultivo.setFresaProducida(tempSize); break;
 		}
-		
+
 		//Remove del cultivo en la lista de los cultivos estan en el terreno
 		this.getTerreno().getCultivos().remove(cultivo);
 		Cultivo.getCultivos().remove(cultivo);
