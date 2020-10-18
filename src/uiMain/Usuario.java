@@ -146,7 +146,7 @@ public class Usuario {
 			int id = readInt() - 1;
 			Terreno.getTerreno().get(id).fertilizarTerreno();
 			Terreno.getTerreno().get(id).getCultivoPermitido();
-			System.out.println("Terreno fertilizado, ahora puedes sembrar: ");
+			System.out.println("Terreno fertilizado ");
 	        System.out.println(Terreno.getTerreno().get(id).cultivosPermitidos());
 		}else {
 			System.out.println("No dispone de terrenos, por favor cree uno");
@@ -172,7 +172,6 @@ public class Usuario {
 					int tamaño = readInt();
 					if (tamaño <= terreno.getTamanoDisponible()) {
 						System.out.println(Cultivo.crearCultivo(tipo, tamaño, terreno));
-	//					System.out.println("Se ha creado un terreno de " + tipo + ", con tamaño " + tamaño);
 					}else {
 						System.out.println("Se ha cancelado la operacion, el tamaño del cultivo no concuerda con el del terreno");
 					}
