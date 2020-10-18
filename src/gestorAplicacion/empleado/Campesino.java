@@ -43,11 +43,11 @@ public class Campesino extends Empleado{
 		//Sumar la candidad producida por tipo 
 		String tempTypeCrop = cultivo.getTipoCultivo();
 		switch(tempTypeCrop) {
-		case "papas": cultivo.setPapaProducida(tempSize); break;
-		case "sandias": cultivo.setSandiaProducida(tempSize); break;
-		case "mango": cultivo.setMangoProducido(tempSize); break;
-		case "banano": cultivo.setBananoProducido(tempSize); break;
-		case "fresas": cultivo.setFresaProducida(tempSize); break;
+		case "papas": Cultivo.setPapaProducida(tempSize); break;
+		case "sandias": Cultivo.setSandiaProducida(tempSize); break;
+		case "mango": Cultivo.setMangoProducido(tempSize); break;
+		case "banano": Cultivo.setBananoProducido(tempSize); break;
+		case "fresas": Cultivo.setFresaProducida(tempSize); break;
 		}
 		
 		//Remove del cultivo en la lista de los cultivos estan en el terreno
