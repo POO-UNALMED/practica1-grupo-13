@@ -7,7 +7,8 @@ public abstract class Empleado {
 	protected int sueldo;
 	protected int cedula;
 	protected Terreno terreno;
-
+	public Empleado() {
+	}
 	public Empleado(String nombre, int sueldo, int cedula, Terreno terreno) {
 		this.nombre = nombre;
 		this.sueldo = sueldo;

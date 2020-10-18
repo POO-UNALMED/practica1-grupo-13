@@ -5,6 +5,8 @@ import gestorAplicacion.*;
 
 public class Agronomo extends Empleado{
 	private static LinkedList<Agronomo> agronomos = new LinkedList<Agronomo>();
+	public Agronomo() {	
+	}
 	public Agronomo(String nombre, int sueldo, int cedula, Terreno terreno) {
 		super(nombre, sueldo, cedula, terreno);
 		terreno.setAgronomo(this);

@@ -209,10 +209,15 @@ public class Usuario {
 			}
 		}
 	}
+	public static void renunciaAleatoria() {
+		new Campesino().renunciar();
+		new Agronomo().renunciar();
+	}
 	public static void main(String args[]) {
 		int opcionElegida;
 		do {
 			Amenaza.Amenazar();
+			renunciaAleatoria();
 			System.out.println("Selecciona una funcion");
 			System.out.println("1. Contratar");
 			System.out.println("2. Despedir");
