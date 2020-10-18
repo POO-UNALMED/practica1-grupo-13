@@ -106,8 +106,19 @@ public class Terreno{
 		return terrenosTotales;
 	}
 	
+	public static Terreno buscarTerreno(String id) {
+		Iterator<Terreno> terreno = terrenosTotales.iterator();  
+		Terreno tExistente = null;
+		while(terreno.hasNext()) {
+			Terreno t = (Terreno) terreno.next();
+			if(t.getId().equals(id)) {
+				tExistente = t;
+			}	
+		}
+		return tExistente;
+	}
 	public String cultivosPermitidos() { //se utiliza en cultivo 
-		ListIterator iterador = cultivoPermitido.listIterator();
+		ListIterator iterador = cultivoPermitido.listIterator();  /// También funcionaría con el iterador declarado en la anterior 
 		StringBuffer lista = new StringBuffer("Los cultivos que permite el terreno son:\n");
 		while(iterador.hasNext()) {
 			String tipo = (String)iterador.next();
