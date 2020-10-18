@@ -17,7 +17,6 @@ public class Cultivo {
 	private static double mangoProducido;
 	private static double bananoProducido;
 	private static double fresaProducida;
-	private double cantSembrada;
 	private double nitrogeno;
 	private double potasio;
 	private double fosforo;
@@ -131,9 +130,6 @@ public class Cultivo {
 	
 	public void agregarCultivo(Cultivo cultivo) { //Sergio
 		cultivos.add(cultivo);
-	}
-	public double getCantSembrada(){
-		return (this.cantSembrada);
 	}
 	public static LinkedList<Cultivo>  getCultivos(){
 		return (cultivos);
