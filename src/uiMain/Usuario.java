@@ -37,7 +37,7 @@ public class Usuario {
 			}
 			else if(opcionElegida == 2) {
 				if(Terreno.getTerreno().get(terreno).getAgronomo().equals(null)) {
-					new Agronomo(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
+					Agronomo agro = new Agronomo(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
 					System.out.println("Se ha creado un agronomo.");
 					
 				}
