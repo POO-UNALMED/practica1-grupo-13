@@ -83,12 +83,35 @@ public class Cultivo {
 		terreno.agregarTipo("fresa");
 	}
 	
-	//Funciones relacionadas a la produccion
-	public void sembrar(double cantidad) {
-		this.cantSembrada += cantidad;
+	public static void setPapaProducida(double papaRecolectada) {
+		papaProducida += papaRecolectada;
 	}
-	public void recolectar() {
-		this.cantProducida += this.cantSembrada;
+	public static void setSandiaProducida(double sandiaRecolectada) {
+		sandiaProducida += sandiaRecolectada;
+	}
+	public static void setMangoProducido(double mangoRecolectado) {
+		mangoProducido += mangoRecolectado;
+	}
+	public static void setBananoProducido(double bananoRecolectado) {
+		bananoProducido += bananoRecolectado;
+	}
+	public static void setFresaProducida(double fresaRecolectada) {
+		fresaProducida += fresaRecolectada;
+	}
+	public static double getPapaProducida() {
+		return (papaProducida);
+	}
+	public static double getSandiaProducida() {
+		return (sandiaProducida);
+	}
+	public static double getMangoProducido() {
+		return (mangoProducido);
+	}
+	public static double getBananoProducido() {
+		return (bananoProducido);
+	}
+	public static double getFresaProducida() {
+		return (fresaProducida);
 	}
 	
 	public Amenaza getAmenaza() {
