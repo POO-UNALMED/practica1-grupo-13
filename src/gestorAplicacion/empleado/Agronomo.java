@@ -1,7 +1,6 @@
 package gestorAplicacion.empleado;
 import java.util.LinkedList;
 import java.util.Scanner;
-
 import gestorAplicacion.terreno.*;
 
 public class Agronomo extends Empleado{
@@ -16,12 +15,13 @@ public class Agronomo extends Empleado{
 	}
 	public static String mostrarAgronomos() {
 		String muestra = ""; int contador = 1;
-		for (Integer i = 0; i < Terreno.getTerreno().size(); i ++){
-			if(!Terreno.getTerreno().get(i).getAgronomo().equals(null)) {
-				muestra = muestra + (contador) + ". " + Terreno.getTerreno().  + "\n";
-				contador++;
-			}
+		for (Integer i = 0; i < agronomos.size(); i ++){
+				muestra = muestra + (contador) + ". " + agronomos.get(i).getCedula()  + "\n";
 		}
 		return(muestra);
+	}
+	public String toString() {
+		return("El agronomo con:" + "\n " + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
+				"Sueldo: " + this.getSueldo() + "Vinculado a terreno: " + this.getTerreno().getId());
 	}
 }
