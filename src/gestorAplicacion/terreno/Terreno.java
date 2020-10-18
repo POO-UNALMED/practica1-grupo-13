@@ -142,7 +142,7 @@ public class Terreno{
 	public static String mostrarTerrenos() {       //saca el linkedList terrenosTotales, y le muestra al usuario sus ids
 		String muestra = "";
 		for (Integer i = 0; i < terrenosTotales.size(); i ++){
-			muestra = muestra + "Opcion " + (i+1) + ": "+ terrenosTotales.get(i).getId() + "\n";
+			muestra = muestra + (i+1) + ". "+ terrenosTotales.get(i).getId() + "\n";
 		}
 		return(muestra);
 	}

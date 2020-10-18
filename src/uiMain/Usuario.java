@@ -52,31 +52,38 @@ public class Usuario {
 	}
 	public static void despedir() {
 		int opcionElegida, opcionElegida2;
-		System.out.println("¿Qué trabajador desea despedir?");
-		System.out.println("1. Campesino");
-		System.out.println("2. Agronomo");
-		System.out.println("3. Volver");
-		opcionElegida = readInt();
-		if(opcionElegida == 1) {
-			System.out.println("Seleccione un terreno para mirar los campesinos que laboran en el");
-			System.out.println(Terreno.mostrarTerrenos());
-			opcionElegida = readInt() - 1;
-			if(Terreno.getTerreno().get(opcionElegida).getCampesinos().size() > 0) {
-				System.out.println("Seleccione un campesino para despedir");
-				System.out.println(Campesino.mostrarCampesinos(Terreno.getTerreno().get(opcionElegida)));
-				opcionElegida2 = readInt() - 1;
-				System.out.println("Se ha despedio a: ");
-				System.out.println(Terreno.getTerreno().get(opcionElegida).getCampesinos().get(opcionElegida2));
-				Terreno.getTerreno().get(opcionElegida).getCampesinos().get(opcionElegida2).renunciar();
+		if(Terreno.getTerreno().size() > 0) {
+			System.out.println("¿Qué trabajador desea despedir?");
+			System.out.println("1. Campesino");
+			System.out.println("2. Agronomo");
+			System.out.println("3. Volver");
+			opcionElegida = readInt();
+			if(opcionElegida == 1) {
+				System.out.println("Seleccione un terreno para mirar los campesinos que laboran en el");
+				System.out.println(Terreno.mostrarTerrenos());
+				opcionElegida = readInt() - 1;
+				if(Terreno.getTerreno().get(opcionElegida).getCampesinos().size() > 0) {
+					System.out.println("Seleccione un campesino para despedir");
+					System.out.println(Campesino.mostrarCampesinos(Terreno.getTerreno().get(opcionElegida)));
+					opcionElegida2 = readInt() - 1;
+					System.out.println("Se ha despedio a: ");
+					System.out.println(Terreno.getTerreno().get(opcionElegida).getCampesinos().get(opcionElegida2));
+					Terreno.getTerreno().get(opcionElegida).getCampesinos().get(opcionElegida2).renunciar();
+				}
+				else {
+					System.out.println("No hay campesinos vinculados a este terreno");
+				}
 			}
-			else {
-				System.out.println("No hay campesinos vinculados a este terreno");
+			else if(opcionElegida == 2) {
+				System.out.println("Seleccione un agronomo para despedir");
+				System.out.println(Agronomo.mostrarAgronomos());
+				opcionElegida = readInt() - 1;
 			}
 		}
-		else if(opcionElegida == 2) {
-			System.out.println("Seleccione un agronomo para despedir");
-			System.out.println();
+		else {
+			System.out.println("Debe asignar primero terrenos, para así tener trabajadores y despedirlos.");
 		}
+		
 	}
 	public static int produccion() {
 		return 1;
