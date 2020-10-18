@@ -85,7 +85,7 @@ public class Cultivo {
 	}
 	
 	//Funciones relacionadas a la produccion
-	public void sembrar(int cantidad) {
+	public void sembrar(double cantidad) {
 		this.cantSembrada += cantidad;
 	}
 	public void cultivar() {
