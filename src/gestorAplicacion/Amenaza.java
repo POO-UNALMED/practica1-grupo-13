@@ -19,7 +19,7 @@ public class Amenaza {
 	}
 	public static void Amenazar() {
 		double Random_Para_AMENAZAR=Math.random();
-		if(Random_Para_AMENAZAR>=0 && Random_Para_AMENAZAR<=0.4){
+		if(Random_Para_AMENAZAR>=0 && Random_Para_AMENAZAR<=0.3){
 			double Random_Para_TipoPeste=Math.random();
 			LinkedList<Cultivo>cultivatrones=Cultivo.getCultivos();
 			String TipoPeste;
