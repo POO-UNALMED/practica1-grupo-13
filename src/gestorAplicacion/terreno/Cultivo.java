@@ -53,42 +53,37 @@ public class Cultivo {
 		}	
 	}
 	
-	public static Cultivo crearPapa(int tamañoDeseado, Terreno terreno) {    
+	public static void crearPapa(int tamañoDeseado, Terreno terreno) {    
 		Cultivo papa = new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno);
 		terreno.agregarCultivo(papa);
 		terreno.agregarTipo("papa");
-		return (papa);
 	}
-	public static Cultivo crearSandia(int tamañoDeseado, Terreno terreno) {
+	public static void crearSandia(int tamañoDeseado, Terreno terreno) {
 		Cultivo sandia = new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno);
 		terreno.agregarCultivo(sandia);
 		terreno.agregarTipo("sandia");
-		return (sandia);
 	}
-	public static Cultivo crearMango(int tamañoDeseado, Terreno terreno) {
+	public static void crearMango(int tamañoDeseado, Terreno terreno) {
 		Cultivo mango = new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno);
 		terreno.agregarCultivo(mango);
 		terreno.agregarTipo("mango");
-		return (mango);
 	}
-	public static Cultivo crearBanano(int tamañoDeseado, Terreno terreno) {
+	public static void crearBanano(int tamañoDeseado, Terreno terreno) {
 		Cultivo banano = new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6, terreno);
 		terreno.agregarCultivo(banano);
 		terreno.agregarTipo("banano");
-		return (banano);
 	}
-	public static Cultivo crearFresa(int tamañoDeseado, Terreno terreno) {
+	public static void crearFresa(int tamañoDeseado, Terreno terreno) {
 		Cultivo fresa = new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno);
 		terreno.agregarCultivo(fresa);
 		terreno.agregarTipo("fresa");
-		return (fresa);
 	}
 	
 	//Funciones relacionadas a la produccion
 	public void sembrar(double cantidad) {
 		this.cantSembrada += cantidad;
 	}
-	public void cultivar() {
+	public void recolectar() {
 		this.cantProducida += this.cantSembrada;
 	}
 	
@@ -123,9 +118,13 @@ public class Cultivo {
 		return (cultivos);
 	}
 	
-	
-//	public String toString() {
-//		return ("Cultivo de +" this.tipoCultivo + ", con tamaño de " + this.tamano);
-//	}
+	public static String mostrarCultivos() {
+		String muestra = "";
+		for (Integer i = 0; i < cultivos.size(); i ++) {
+			muestra = muestra + (i + 1) + ". " + "El cultivo de " + cultivos.get(i).tipoCultivo + ". En el terreno con id: " + cultivos.get(i).terreno.getId();
+		}
+		return (muestra);
+	}
+
 	
 }
