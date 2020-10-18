@@ -127,11 +127,18 @@ public class Terreno{
 		return lista.toString();
 	}
 	
+	public String fertilizarTerreno() {
+		this.nitrogenoDisponible = 0.7;
+		this.potasioDisponible = 0.7;
+		this. fosforoDisponible = 0.7;
+		this.irrigacionActual = 0.7;
+		return this.toString();
+	}
 	public int getTamanoDisponible() {
 		return tamanoDisponible;
 	}
 	public void setTamanoDisponible(int tamano) {
-		this.tamanoDisponible = tamano;
+		this.tamanoDisponible += tamano;
 	}
 	public Agronomo getAgronomo() {
 		return this.agronomo;
@@ -145,7 +152,7 @@ public class Terreno{
 	public static String mostrarTerrenos() {       //saca el linkedList terrenosTotales, y le muestra al usuario sus ids
 		String muestra = "";
 		for (Integer i = 0; i < terrenosTotales.size(); i ++){
-			muestra = muestra + (i+1) + ". "+ terrenosTotales.get(i).getId() + "\n";
+			muestra = muestra + "Opcion " + (i+1) + ": "+ terrenosTotales.get(i).getId() + "\n";
 		}
 		return(muestra);
 	}
