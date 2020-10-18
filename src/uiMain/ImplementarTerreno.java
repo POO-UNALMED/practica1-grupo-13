@@ -10,11 +10,13 @@ public class ImplementarTerreno {
 		Terreno t1 = new Terreno("1", 5);
 		Terreno t2 = new Terreno("4", 6);
 		Terreno t3 = new Terreno("8", 5);
-		System.out.println(t1.getId());
-		System.out.println(Terreno.getTerreno());
+
+		
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Indique el Id que le desean poner: ");
 		String id = sc.next();
+		
 		Terreno terreno = Terreno.buscarTerreno(id);
 		if(terreno == null) {
 			System.out.println("Ahora indique el tamaño deseado: ");

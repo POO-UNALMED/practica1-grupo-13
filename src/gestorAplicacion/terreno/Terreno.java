@@ -147,4 +147,9 @@ public class Terreno{
 		return(muestra);
 	}
 	
+	public String toString() {
+		return "Se ha creado un nuevo terreno con las siguientes propiedades:\n" + "Nitrogeno disponible: " + (Math.round(this.nitrogenoDisponible*100.0)/100.0) + "\n" + 
+				"Potasio disponible: " + (Math.round(this.potasioDisponible*100.0)/100.0) + "\n" + "Fosforo disponible: " + (Math.round(this.fosforoDisponible*100.0)/100.0) + "\n" +
+				"Nivel de irrigacion: " + (Math.round(this.irrigacionActual*100.0)/100.0);
+	}
 }
