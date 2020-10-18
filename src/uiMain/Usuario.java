@@ -19,7 +19,7 @@ public class Usuario {
 		System.out.println("2. Agronomo");
 		System.out.println("3. Volver");
 		opcionElegida = readInt();
-		if((opcionElegida == 1) || (opcionElegida == 2) && (Terreno.getTerreno().size() > 0)) {
+		if(((opcionElegida == 1) || (opcionElegida == 2)) && (Terreno.getTerreno().size() > 0)) {
 			String nombre; int sueldo; int cedula; int terreno;
 			System.out.println("Ingrese el nombre:");
 			nombre = readLine();
