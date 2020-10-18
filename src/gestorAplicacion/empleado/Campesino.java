@@ -9,20 +9,27 @@ public class Campesino extends Empleado{
 	}
 	public void renunciar() {
 		double x = Math.random();
-		if ((x < 0.2) && (Terreno.getTerreno(). > 0)) {
-			int numero = (int) (Math.random()*Administrador.getCampesinos().size());
-			String nombre = Administrador.getCampesinos().get(numero).getNombre();
-			Administrador.getCampesinos().remove(numero);
-			System.out.println("El campesino " + nombre + " ha renunciado.");
+		if ((x < 0.2) && (Terreno.getTerreno().size() > 0)) {
+			for(int i = 0; i < Terreno.getTerreno().size(); i++) {
+				if(Terreno.getTerreno().get(i).getCampesinos().size() > 0) {
+					Terreno.getTerreno().get(i).getCampesinos().remove(i);
+				}
+			}
 		}
 	}
-	public static void renunciar(int j) {
-		if(Administrador.getCampesinos().size() > 0) {
-			Administrador.getCampesinos().remove(j);
+	public void renunciar(int opcionElegida, int opcionElegida2) {
+		Terreno.getTerreno().get(opcionElegida).getCampesinos().remove(opcionElegida2);
+	}
+	public static String mostrarCampesinos(Terreno terreno) {
+		String muestra = "";
+		for (Integer i = 0; i < terreno.getCampesinos().size(); i ++){
+			muestra = muestra + (i+1) + ". "+ terreno.getCampesinos().get(i).getCedula() + "\n";
 		}
-		else {
-			System.out.println("Debe contratar primero campesinos pirobo bobo hpta");
-		}
+		return(muestra);
+	}
+	public String toString() {
+		return("El campesino con:" + "\n " + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
+				"Sueldo: " + this.getSueldo() + "Vinculado terreno: " + this.getTerreno().getId());
 	}
 }
  
