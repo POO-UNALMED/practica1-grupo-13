@@ -12,11 +12,11 @@ public class Cultivo {
 	private int tamano;
 	private Amenaza amenaza;
 	private Terreno terreno;
-	private static double papaProducida;
-	private static double sandiaProducida;
-	private static double mangoProducido;
-	private static double bananoProducido;
-	private static double fresaProducida;
+	private static int papaProducida;
+	private static int sandiaProducida;
+	private static int mangoProducido;
+	private static int bananoProducido;
+	private static int fresaProducida;
 	private double nitrogeno;
 	private double potasio;
 	private double fosforo;
@@ -82,19 +82,19 @@ public class Cultivo {
 		terreno.agregarTipo("fresa");
 	}
 	
-	public static void setPapaProducida(double papaRecolectada) {
+	public static void setPapaProducida(int papaRecolectada) {
 		papaProducida += papaRecolectada;
 	}
-	public static void setSandiaProducida(double sandiaRecolectada) {
+	public static void setSandiaProducida(int sandiaRecolectada) {
 		sandiaProducida += sandiaRecolectada;
 	}
-	public static void setMangoProducido(double mangoRecolectado) {
+	public static void setMangoProducido(int mangoRecolectado) {
 		mangoProducido += mangoRecolectado;
 	}
-	public static void setBananoProducido(double bananoRecolectado) {
+	public static void setBananoProducido(int bananoRecolectado) {
 		bananoProducido += bananoRecolectado;
 	}
-	public static void setFresaProducida(double fresaRecolectada) {
+	public static void setFresaProducida(int fresaRecolectada) {
 		fresaProducida += fresaRecolectada;
 	}
 	public static double getPapaProducida() {
