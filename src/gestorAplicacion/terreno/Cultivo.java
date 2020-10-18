@@ -7,7 +7,7 @@ import gestorAplicacion.Amenaza;
 
 public class Cultivo {
 	
-	private static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// Faltan crear funciones-- Sergio 
+	public static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// Faltan crear funciones-- Sergio 
 	private String tipoCultivo;
 	private int tamano;
 	private Amenaza amenaza;
@@ -57,35 +57,30 @@ public class Cultivo {
 		Cultivo papa = new Cultivo ("papa", tamañoDeseado, 0.3, 0.4, 0.4, 0.2, terreno);
 		terreno.agregarCultivo(papa);
 		terreno.agregarTipo("papa");
-		cultivos.add(papa);
 		return (papa);
 	}
 	public static Cultivo crearSandia(int tamañoDeseado, Terreno terreno) {
 		Cultivo sandia = new Cultivo ("sandia", tamañoDeseado, 0.1, 0.3, 0.5, 0.5, terreno);
 		terreno.agregarCultivo(sandia);
 		terreno.agregarTipo("sandia");
-		cultivos.add(sandia);
 		return (sandia);
 	}
 	public static Cultivo crearMango(int tamañoDeseado, Terreno terreno) {
 		Cultivo mango = new Cultivo ("mango", tamañoDeseado, 0.5, 0.3, 0.2, 0.3, terreno);
 		terreno.agregarCultivo(mango);
 		terreno.agregarTipo("mango");
-		cultivos.add(mango);
 		return (mango);
 	}
 	public static Cultivo crearBanano(int tamañoDeseado, Terreno terreno) {
 		Cultivo banano = new Cultivo ("banano", tamañoDeseado, 0.3, 0.1, 0.2, 0.6, terreno);
 		terreno.agregarCultivo(banano);
 		terreno.agregarTipo("banano");
-		cultivos.add(banano);
 		return (banano);
 	}
 	public static Cultivo crearFresa(int tamañoDeseado, Terreno terreno) {
 		Cultivo fresa = new Cultivo ("fresa", tamañoDeseado, 0.3, 0.4, 0.5, 0.4, terreno);
 		terreno.agregarCultivo(fresa);
 		terreno.agregarTipo("fresa");
-		cultivos.add(fresa);
 		return (fresa);
 	}
 	
