@@ -160,7 +160,6 @@ public class Usuario {
 				case 2: despedir();break;
 				case 3: produccion();break;
 				case 4: examinarCultivo();break;
-				case 5: cultivar();break;
 				case 6: agregarTerreno();
 				case 8: break;
 					
