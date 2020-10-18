@@ -7,7 +7,7 @@ import gestorAplicacion.Amenaza;
 
 public class Cultivo {
 	
-	public static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// Faltan crear funciones-- Sergio 
+	private static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// Faltan crear funciones-- Sergio 
 	private String tipoCultivo;
 	private int tamano;
 	private Amenaza amenaza;
@@ -120,6 +120,9 @@ public class Cultivo {
 	}
 	public static LinkedList<Cultivo>  getCultivos(){
 		return (cultivos);
+	}
+	public Terreno getTerreno() {
+		return (this.terreno);
 	}
 	
 	public static String mostrarCultivos() {
