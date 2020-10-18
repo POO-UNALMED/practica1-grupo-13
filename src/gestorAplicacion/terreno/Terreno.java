@@ -128,7 +128,7 @@ public class Terreno{
 	}
 	public String mostrarCultivos() {
 		ListIterator iterador = tipos.listIterator();
-		StringBuffer lista = new StringBuffer("Eliga una de las siguientes opciones ");
+		StringBuffer lista = new StringBuffer("Eliga una de las siguientes opciones \n");
 		int i = 1;
 		while(iterador.hasNext()) {
 			String tipo = (String)iterador.next();
