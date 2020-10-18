@@ -38,11 +38,13 @@ public class Amenaza {
 						TipoPeste="Maleza";
 						Amenaza amenaza=new Amenaza(TipoPeste,cultivatrones.get(Random_Para_Sacar_Cultivo),cantidad_infectada);
 						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo));
+						System.out.println("Una maleza está atacando al cultivo");
 					}
 					else {
 						TipoPeste="Hongo";
 						Amenaza amenaza=new Amenaza(TipoPeste,cultivatrones.get(Random_Para_Sacar_Cultivo),cantidad_infectada);
 						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo));
+						System.out.println("Un hongo está atacando al cultivo");
 					}
 				}
 			}
