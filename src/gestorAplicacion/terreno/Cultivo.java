@@ -12,7 +12,11 @@ public class Cultivo {
 	private int tamano;
 	private Amenaza amenaza;
 	private Terreno terreno;
-	private double cantProducida;
+	private static double papaProducida;
+	private static double sandiaProducida;
+	private static double mangoProducido;
+	private static double bananoProducido;
+	private static double fresaProducida;
 	private double cantSembrada;
 	private double nitrogeno;
 	private double potasio;
