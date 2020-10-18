@@ -37,8 +37,8 @@ public class Agronomo extends Empleado{
 		return(muestra);
 	}
 	public String toString() {
-		return("El agronomo con:" + "\n " + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
-				"Sueldo: " + this.getSueldo() + "Vinculado a terreno: " + this.getTerreno().getId());
+		return("El agronomo con:" + "\n" + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
+				"Sueldo: " + this.getSueldo() + "\n" + "Vinculado a terreno: " + this.getTerreno().getId());
 	}
 	public static LinkedList<Agronomo> getAgronomos(){
 		return agronomos;

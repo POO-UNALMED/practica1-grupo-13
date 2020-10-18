@@ -32,8 +32,8 @@ public class Campesino extends Empleado{
 		return(muestra);
 	}
 	public String toString() {
-		return("El campesino con:" + "\n " + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
-				"Sueldo: " + this.getSueldo() + "Vinculado a terreno: " + this.getTerreno().getId());
+		return("El campesino con:" + "\n" + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
+				"Sueldo: " + this.getSueldo() + "\n" + "Vinculado a terreno: " + this.getTerreno().getId());
 	}
 	
 	public void recolectar(Cultivo cultivo) {
