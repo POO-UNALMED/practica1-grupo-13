@@ -135,12 +135,6 @@ public class Cultivo {
 	public double getCantSembrada(){
 		return (this.cantSembrada);
 	}
-	public void setCantSembrada(int cantidadPlaga) {
-		this.cantSembrada -= cantidadPlaga;
-		if (this.cantSembrada < 0) {
-			this.cantSembrada = 0;
-		}
-	}
 	public static LinkedList<Cultivo>  getCultivos(){
 		return (cultivos);
 	}
