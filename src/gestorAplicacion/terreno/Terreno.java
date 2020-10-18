@@ -126,7 +126,16 @@ public class Terreno{
 		}
 		return lista.toString();
 	}
-	
+	public String mostrarCultivos() {
+		Iterator iterador = cultivos.iterator();
+		StringBuffer lista = new StringBuffer("Los cultivos presentes son:\n");
+		int i = 0;
+		while(iterador.hasNext()) {
+			String tipo = (String)iterador.next();
+			lista.append("Opcion " + (i++) + ": "+ tipo + "\n");
+		}
+		return lista.toString();
+	}
 	public String fertilizarTerreno() {
 		this.nitrogenoDisponible = 0.7;
 		this.potasioDisponible = 0.7;

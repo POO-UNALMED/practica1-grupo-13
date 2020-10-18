@@ -11,9 +11,9 @@ public class Fertilizar {
 		System.out.println(Terreno.mostrarTerrenos());
 		System.out.println("Escoja el terreno que desea fertilizar en irrigar: ");
 		int id = sc.nextInt();
-		Terreno.getTerreno().get(id).fertilizarTerreno();
-		Terreno.getTerreno().get(id).getCultivoPermitido();
+		Terreno.getTerreno().get(id-1).fertilizarTerreno();
+		Terreno.getTerreno().get(id-1).getCultivoPermitido();
 		System.out.println("Terreno ferlizado, ahora puedes sembrar: ");
-        System.out.println(Terreno.getTerreno().get(id).cultivosPermitidos());
+        System.out.println(Terreno.getTerreno().get(id-1).cultivosPermitidos());
 	}
 }
