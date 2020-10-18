@@ -110,6 +110,9 @@ public class Cultivo {
 	public void agregarCultivo(Cultivo cultivo) { //Sergio
 		cultivos.add(cultivo);
 	}
+	public double getCantSembrada(){
+		return (this.cantSembrada);
+	}
 	public void setCantSembrada(int cantidadPlaga) {
 		this.cantSembrada -= cantidadPlaga;
 		if (this.cantSembrada < 0) {
