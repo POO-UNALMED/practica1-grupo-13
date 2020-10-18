@@ -140,13 +140,18 @@ public class Usuario {
 		}
 	}
 	public static void ferrigar() {
-		System.out.println(Terreno.mostrarTerrenos());
-		System.out.println("Escoja el terreno que desea fertilizar e irrigar: ");
-		int id = readInt() - 1;
-		Terreno.getTerreno().get(id).fertilizarTerreno();
-		Terreno.getTerreno().get(id).getCultivoPermitido();
-		System.out.println("Terreno fertilizado, ahora puedes sembrar: ");
-        System.out.println(Terreno.getTerreno().get(id).cultivosPermitidos());
+		if(Terreno.getTerreno().size() > 0) {
+			System.out.println(Terreno.mostrarTerrenos());
+			System.out.println("Escoja el terreno que desea fertilizar e irrigar: ");
+			int id = readInt() - 1;
+			Terreno.getTerreno().get(id).fertilizarTerreno();
+			Terreno.getTerreno().get(id).getCultivoPermitido();
+			System.out.println("Terreno fertilizado, ahora puedes sembrar: ");
+	        System.out.println(Terreno.getTerreno().get(id).cultivosPermitidos());
+		}else {
+			System.out.println("No dispone de terrenos, por favor cree uno");
+		}
+		
 	}
 	public static void cultivoyCosecha() {
 		System.out.println("Escoja la funcion a realizar:\nPara crear un cultivo ingrese 1\nPara recolectar un cultivo ingrese 2");
