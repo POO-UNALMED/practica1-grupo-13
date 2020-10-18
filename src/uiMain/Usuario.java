@@ -144,13 +144,18 @@ public class Usuario {
 			System.out.println(Terreno.mostrarTerrenos());
 			System.out.println("Escoja el terreno que desea fertilizar e irrigar: ");
 			int id = readInt() - 1;
-			Terreno.getTerreno().get(id).fertilizarTerreno();
-			Terreno.getTerreno().get(id).getCultivoPermitido();
-			System.out.println("Terreno fertilizado ");
-	        System.out.println(Terreno.getTerreno().get(id).cultivosPermitidos());
+			if(Terreno.getTerreno().get(id).getCampesinos().size() > 0) {
+				Terreno.getTerreno().get(id).fertilizarTerreno();
+				Terreno.getTerreno().get(id).getCultivoPermitido();
+				System.out.println("Terreno fertilizado ");
+		        System.out.println(Terreno.getTerreno().get(id).cultivosPermitidos());
+			}else {
+				System.out.println("No ha contratado campesinos para este terreno.\nDebe contartar al menos uno para realizar este trabajo");
+			}
 		}else {
 			System.out.println("No dispone de terrenos, por favor cree uno");
 		}
+		
 		
 	}
 	public static void cultivoyCosecha() {
