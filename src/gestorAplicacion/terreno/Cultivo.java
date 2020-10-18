@@ -116,6 +116,9 @@ public class Cultivo {
 			this.cantSembrada = 0;
 		}
 	}
+	public static LinkedList<Cultivo>  getCultivos(){
+		return (cultivos);
+	}
 	
 	
 //	public String toString() {
