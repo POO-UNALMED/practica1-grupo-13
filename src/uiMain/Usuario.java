@@ -171,8 +171,8 @@ public class Usuario {
 					System.out.println("Escriba el tamaño que desea que tenga el cultivo: ");
 					int tamaño = readInt();
 					if (tamaño <= terreno.getTamanoDisponible()) {
-						Cultivo.crearCultivo(tipo, tamaño, terreno);
-						System.out.println("Se ha creado un terreno de " + tipo + ", con tamaño " + tamaño);
+						System.out.println(Cultivo.crearCultivo(tipo, tamaño, terreno));
+	//					System.out.println("Se ha creado un terreno de " + tipo + ", con tamaño " + tamaño);
 					}else {
 						System.out.println("Se ha cancelado la operacion, el tamaño del cultivo no concuerda con el del terreno");
 					}

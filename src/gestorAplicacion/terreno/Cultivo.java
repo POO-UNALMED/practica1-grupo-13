@@ -38,22 +38,28 @@ public class Cultivo {
 	// Se agrega el cultivo a el arreglo "cultivos" en terreno
 	// Comprobar capacidad en el Main
 	
-	public static void crearCultivo(String tipo, int tamañoDeseado, Terreno terreno) {
+	public static String crearCultivo(String tipo, int tamañoDeseado, Terreno terreno) {
 		if (tipo.equals("papa") && terreno.getCultivoPermitido().contains("papa") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("papa") == false ) {
 			Cultivo.crearPapa(tamañoDeseado, terreno);
+			return ("Se ha creado exitosamente");
 		}
 		else if (tipo.equals("sandia") && terreno.getCultivoPermitido().contains("sandia") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("sandia") == false) {
 			Cultivo.crearSandia(tamañoDeseado, terreno);
+			return ("Se ha creado exitosamente");
 		}
 		else if (tipo.equals("mango") && terreno.getCultivoPermitido().contains("mango") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("mango") == false) {
 			Cultivo.crearMango(tamañoDeseado, terreno);
+			return ("Se ha creado exitosamente");
 		}
 		else if (tipo.equals("banano") && terreno.getCultivoPermitido().contains("banano") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("banano") == false) {
 			Cultivo.crearBanano(tamañoDeseado, terreno);
+			return ("Se ha creado exitosamente");
 		}
 		else if (tipo.equals("fresa") && terreno.getCultivoPermitido().contains("fresa") && terreno.getTamanoDisponible() >= tamañoDeseado && terreno.getTipos().contains("fresa") == false) {
 			Cultivo.crearFresa(tamañoDeseado, terreno);
+			return ("Se ha creado exitosamente");
 		}	
+			return ("No se ha podido crear");
 	}
 	
 	public static void crearPapa(int tamañoDeseado, Terreno terreno) {    
