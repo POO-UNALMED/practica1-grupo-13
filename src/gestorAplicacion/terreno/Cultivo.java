@@ -110,6 +110,14 @@ public class Cultivo {
 	public void agregarCultivo(Cultivo cultivo) { //Sergio
 		cultivos.add(cultivo);
 	}
+	public void setCantSembrada(int cantidadPlaga) {
+		this.cantSembrada -= cantidadPlaga;
+		if (this.cantSembrada < 0) {
+			this.cantSembrada = 0;
+		}
+	}
+	
+	
 //	public String toString() {
 //		return ("Cultivo de +" this.tipoCultivo + ", con tamaño de " + this.tamano);
 //	}
