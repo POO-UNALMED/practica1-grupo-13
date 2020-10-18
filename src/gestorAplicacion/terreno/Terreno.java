@@ -29,7 +29,8 @@ public class Terreno{
 	}
 	
 	public Terreno(String id, int tamano) {   //Debe ser estática !!!
-		this(id, tamano, Math.random(), Math.random(), Math.random(), Math.random()); //Administrador utiliza este
+		this(id, tamano, Math.random(), Math.random(), Math.random(), Math.random());//Administrador utiliza este
+		this.tamanoDisponible = tamano;
 		// ***this.getCultivoPermitido()*** Necesitamos decir para cuáles cultivos es apropiado cada vez que se cree un terreno
 	}
 	
