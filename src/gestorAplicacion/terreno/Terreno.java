@@ -127,7 +127,7 @@ public class Terreno{
 		return lista.toString();
 	}
 	public String mostrarCultivos() {
-		Iterator iterador = cultivos.iterator();
+		ListIterator iterador = tipos.listIterator();
 		StringBuffer lista = new StringBuffer("Los cultivos presentes son:\n");
 		int i = 0;
 		while(iterador.hasNext()) {
