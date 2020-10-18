@@ -4,7 +4,7 @@ import gestorAplicacion.empleado.*;
 import java.util.*;
 
 public class Terreno{
-	private final String id; //Nuestro final
+	private final String id; //Nuestra constante 
 	private LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();
 	private LinkedList<String> tipos = new LinkedList<String>(); //Tipos de cultivo presentes en el terreno 
 	private LinkedList<String> cultivoPermitido = new LinkedList<String>();
