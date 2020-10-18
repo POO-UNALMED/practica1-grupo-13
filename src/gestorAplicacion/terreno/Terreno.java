@@ -130,6 +130,9 @@ public class Terreno{
 	public int getTamanoDisponible() {
 		return tamanoDisponible;
 	}
+	public void setTamanoDisponible(int tamano) {
+		this.tamanoDisponible = tamano;
+	}
 	public Agronomo getAgronomo() {
 		return this.agronomo;
 	}
