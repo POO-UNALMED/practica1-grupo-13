@@ -32,6 +32,7 @@ public class Amenaza {
 						TipoPeste="Plaga";
 						Amenaza amenaza=new Amenaza(TipoPeste,cultivatrones.get(Random_Para_Sacar_Cultivo),cantidad_infectada);
 						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo));
+						System.out.println("Una plaga está atacando al cultivo" );
 					}
 					else if(Random_Para_TipoPeste>0.3 && Random_Para_TipoPeste<0.6) {
 						TipoPeste="Maleza";
