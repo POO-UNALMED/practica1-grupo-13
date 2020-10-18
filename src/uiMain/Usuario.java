@@ -2,6 +2,7 @@ package uiMain;
 import java.util.*;
 import gestorAplicacion.empleado.*;
 import gestorAplicacion.terreno.*;
+import gestorAplicacion.*;
 
 public class Usuario {
 	static Scanner Sc = new Scanner(System.in);
@@ -92,18 +93,18 @@ public class Usuario {
 	}
 	public static void produccion() {
 		System.out.println("La cantidad de cultivos de cada clase es:");
-		System.out.println("Cantidad de papas: " + + "hectareas.");
-		System.out.println("Cantidad de sandias: " + + "hectareas.");
-		System.out.println("Cantidad de mangos: " + + "hectareas.");
-		System.out.println("Cantidad de bananos: " + + "hectareas.");
-		System.out.println("Cantidad de fresas: " + + "hectareas.");
+		System.out.println("Cantidad de papas: " + Cultivo.getPapaProducida() + " hectareas");
+		System.out.println("Cantidad de sandias: " + Cultivo.getSandiaProducida() + " hectareas");
+		System.out.println("Cantidad de bananos: " + Cultivo.getBananoProducido() + " hectareas");
+		System.out.println("Cantidad de mangos: " + Cultivo.getMangoProducido() + " hectareas");
+		System.out.println("Cantidad de fresas: " + Cultivo.getFresaProducida() + " hectareas");
 	}
 	public static void examinarCultivo(){
 		if(Cultivo.getCultivos().isEmpty()) {
 			System.out.println("Debe cultivar primero");
 		}
 		else {
-			int opcionElegida;
+			int opcionElegida, opcionElegida2;
 			System.out.println("Seleccione un cultivo:");
 			System.out.println(Cultivo.mostrarCultivos());
 			opcionElegida = readInt() - 1;
@@ -111,17 +112,34 @@ public class Usuario {
 			if(!Cultivo.getCultivos().get(opcionElegida).getAmenaza().equals(null)) {
 				System.out.print("El cultivo se encuentra bajo una amenaza de: ");
 				System.out.println(Cultivo.getCultivos().get(opcionElegida).getAmenaza());
-				System.out.println("¿Desea aplicas pesticida para eliminar la amenaza del cultivo?");
+				System.out.println("¿Desea aplicar pesticida para eliminar la amenaza del cultivo?");
 				System.out.println("1. Si");
 				System.out.println("2. No");
-				opcionElegida = readInt();
-				if (opcionElegida == 1) {
-					
+				opcionElegida2 = readInt();
+				if (opcionElegida2 == 1) {
+					Amenaza amenaza = Cultivo.getCultivos().get(opcionElegida).getAmenaza();
+					Cultivo cultivo = Cultivo.getCultivos().get(opcionElegida);
+					Agronomo.erradicarAmenaza(amenaza, cultivo);
 				}
 				else {}
 			}
 		}
 	}
+	public static void agregarTerreno() {
+		System.out.println("Indique el Id que le desea poner: ");
+		String id = readLine();
+		if(Terreno.buscarTerreno(id) == null) {
+			System.out.println("Ahora indique el tamano deseado: ");
+			int tamano = readInt();
+			Terreno terrenoCreado = new Terreno(id, tamano);
+			System.out.println("El terreno ha sido agregado exitosamente");
+			System.out.println(terrenoCreado.toString());
+			
+		}else {
+			System.out.println("Lo siento, este terreno ya existe");
+		}
+	}
+	
 	public static void main(String args[]) {
 		new Terreno("Cola", 2);
 		new Terreno("bola", 2);
@@ -140,8 +158,9 @@ public class Usuario {
 			switch (opcionElegida) {
 				case 1: contratar();break;
 				case 2: despedir();break;
-				case 3: produccion();
+				case 3: produccion();break;
 				case 4: examinarCultivo();break;
+				case 6: agregarTerreno();
 				case 8: break;
 					
 			}

@@ -1,6 +1,7 @@
 package gestorAplicacion.empleado;
 import java.util.LinkedList;
 import gestorAplicacion.terreno.*;
+import gestorAplicacion.*;
 
 public class Agronomo extends Empleado{
 	private static LinkedList<Agronomo> agronomos = new LinkedList<Agronomo>();
@@ -9,7 +10,10 @@ public class Agronomo extends Empleado{
 		terreno.setAgronomo(this);
 		agronomos.add(this);
 	}
-	public void examinarCultivos() {} //Examina los cultivos presentes en todos los terrenos
+	public static void erradicarAmenaza(Amenaza amenaza, Cultivo cultivo) {
+		Pesticida pesticida = new Pesticida(amenaza);
+		pesticida.matarAmenaza(cultivo);
+	}
 	public void renunciar() {
 		double x = Math.random();
 		int y = (int) Math.random()*agronomos.size();
