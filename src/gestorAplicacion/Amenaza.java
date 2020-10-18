@@ -27,7 +27,7 @@ public class Amenaza {
 			int cantidad_de_cultivos=cultivatrones.size();
 			if(cantidad_de_cultivos!=0) {
 				int Random_Para_Sacar_Cultivo=(int)Random_Para_TipoPeste*cantidad_de_cultivos;
-				if(cultivatrones.get(Random_Para_Sacar_Cultivo).getAmenaza()==null && cultivatrones.get(Random_Para_Sacar_Cultivo).getCantSembrada()>0) {
+				if(cultivatrones.get(Random_Para_Sacar_Cultivo).getAmenaza()==null && cultivatrones.get(Random_Para_Sacar_Cultivo).getTamano()>0) {
 					double cantidad_infectada=Math.random()*cultivatrones.get(Random_Para_Sacar_Cultivo).getTamano();
 					if(Random_Para_TipoPeste>=0 && Random_Para_TipoPeste<=0.3) {
 						TipoPeste="Plaga";
