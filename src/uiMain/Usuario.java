@@ -75,9 +75,14 @@ public class Usuario {
 				}
 			}
 			else if(opcionElegida == 2) {
-				System.out.println("Seleccione un agronomo para despedir");
-				System.out.println(Agronomo.mostrarAgronomos());
-				opcionElegida = readInt() - 1;
+				if (Agronomo.getAgronomos().size() > 0) {
+					System.out.println("Seleccione un agronomo para despedir");
+					System.out.println(Agronomo.mostrarAgronomos());
+					opcionElegida = readInt() - 1;
+				}
+				else {
+					System.out.println("No ha contratado agronomos");
+				}
 			}
 		}
 		else {

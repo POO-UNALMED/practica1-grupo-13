@@ -1,6 +1,5 @@
 package gestorAplicacion.empleado;
 import java.util.LinkedList;
-import java.util.Scanner;
 import gestorAplicacion.terreno.*;
 
 public class Agronomo extends Empleado{
@@ -12,6 +11,17 @@ public class Agronomo extends Empleado{
 	}
 	public void examinarCultivos() {} //Examina los cultivos presentes en todos los terrenos
 	public void renunciar() {
+		double x = Math.random();
+		int y = (int) Math.random()*agronomos.size();
+		if ((x < 0.15) && (agronomos.size() > 0)) {
+			System.out.println(agronomos.get(y));
+			System.out.println("Ha renunciado.");
+		}
+	}
+	public void renunciar(int opcionElegida) {
+		System.out.println(agronomos.get(opcionElegida));
+		System.out.println("Ha renunciado.");
+		agronomos.remove(opcionElegida);
 	}
 	public static String mostrarAgronomos() {
 		String muestra = ""; int contador = 1;
@@ -23,5 +33,8 @@ public class Agronomo extends Empleado{
 	public String toString() {
 		return("El agronomo con:" + "\n " + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
 				"Sueldo: " + this.getSueldo() + "Vinculado a terreno: " + this.getTerreno().getId());
+	}
+	public static LinkedList<Agronomo> getAgronomos(){
+		return agronomos;
 	}
 }
