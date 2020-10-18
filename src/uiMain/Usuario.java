@@ -37,7 +37,7 @@ public class Usuario {
 			}
 			else if(opcionElegida == 2) {
 				if(Terreno.getTerreno().get(terreno).getAgronomo().equals(null)) {
-					Agronomo agro = new Agronomo(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
+					new Agronomo(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
 					System.out.println("Se ha creado un agronomo.");
 					
 				}
@@ -139,11 +139,17 @@ public class Usuario {
 			System.out.println("Lo siento, este terreno ya existe");
 		}
 	}
-	
+	public static void ferrigar() {
+		System.out.println(Terreno.mostrarTerrenos());
+		System.out.println("Escoja el terreno que desea fertilizar e irrigar: ");
+		int id = readInt() - 1;
+		Terreno.getTerreno().get(id).fertilizarTerreno();
+		Terreno.getTerreno().get(id).getCultivoPermitido();
+		System.out.println("Terreno fertilizado, ahora puedes sembrar: ");
+        System.out.println(Terreno.getTerreno().get(id).cultivosPermitidos());
+	}
 	public static void main(String args[]) {
-		new Terreno("Cola", 2);
-		new Terreno("bola", 2);
-		int opcionElegida = 0;
+		int opcionElegida;
 		do {
 			System.out.println("Selecciona una funcion");
 			System.out.println("1. Contratar");
@@ -160,7 +166,8 @@ public class Usuario {
 				case 2: despedir();break;
 				case 3: produccion();break;
 				case 4: examinarCultivo();break;
-				case 6: agregarTerreno();
+				case 6: agregarTerreno();break;
+				case 7: ferrigar();break;
 				case 8: break;
 					
 			}
