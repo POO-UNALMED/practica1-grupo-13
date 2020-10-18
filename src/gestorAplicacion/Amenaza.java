@@ -48,7 +48,7 @@ public class Amenaza {
 			}
 		}
 	}
-	//Hay que tener en cuenta que solo creamos una amenaza en el metodo Amenazar
+	//Hay que tener en cuenta que solo creamos una amenaza en el metodo estatico Amenazar
 	@Override
 	public String toString() {
 		return("La amenaza"+"\n"+"De tipo: "+this.getTipo()+"\n"+"Infecto "+this.cantidad+" hectareas"+"\n"+"Del cultivo: "+this.cultivo+"\n"+"Del terreno: "+this.cultivo.getTerreno()	);
