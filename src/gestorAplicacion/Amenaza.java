@@ -12,10 +12,8 @@ public class Amenaza {
 	public Amenaza(String tipoAmenaza, Cultivo cultivo) {
 		this.tipoAmenaza = tipoAmenaza; this.cultivos.add(cultivo);
 	}	
-	public static void atacarCultivo(Amenaza amenaza,Cultivo cultivo,double Cantidad) {
+	public static void atacarCultivo(Amenaza amenaza,Cultivo cultivo) {
 		cultivo.setAmenaza(amenaza);
-		int Random_Para_Cantidad_Infectada=(int) ((int)Math.random()*Cantidad);
-		cultivo.setCantSembrada(Random_Para_Cantidad_Infectada);
 	}
 	public String getTipo() {
 		return this.tipoAmenaza;
@@ -33,17 +31,17 @@ public class Amenaza {
 					if(Random_Para_TipoPeste>=0 && Random_Para_TipoPeste<=0.3) {
 						TipoPeste="Plaga";
 						Amenaza amenaza=new Amenaza(TipoPeste,cultivatrones.get(Random_Para_Sacar_Cultivo));
-						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo),cultivatrones.get(Random_Para_Sacar_Cultivo).getCantSembrada());
+						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo));
 					}
 					else if(Random_Para_TipoPeste>0.3 && Random_Para_TipoPeste<0.6) {
 						TipoPeste="Maleza";
 						Amenaza amenaza=new Amenaza(TipoPeste,cultivatrones.get(Random_Para_Sacar_Cultivo));
-						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo),cultivatrones.get(Random_Para_Sacar_Cultivo).getCantSembrada());
+						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo));
 					}
 					else {
 						TipoPeste="Hongo";
 						Amenaza amenaza=new Amenaza(TipoPeste,cultivatrones.get(Random_Para_Sacar_Cultivo));
-						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo),cultivatrones.get(Random_Para_Sacar_Cultivo).getCantSembrada());
+						atacarCultivo(amenaza,cultivatrones.get(Random_Para_Sacar_Cultivo));
 					}
 				}
 			}

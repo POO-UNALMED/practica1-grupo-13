@@ -93,6 +93,11 @@ public class Usuario {
 	public static int produccion() {
 		return 1;
 	}
+	public static void examinarCultivo(){
+		System.out.println("Seleccione un cultivo:");
+		System.out.println("");
+		System.out.println();
+	}
 	public static void main(String args[]) {
 		new Terreno("Cola", 2);
 		new Terreno("bola", 2);
@@ -112,6 +117,7 @@ public class Usuario {
 				case 1: contratar();break;
 				case 2: despedir();break;
 				case 3: produccion();
+				case 4: examinarCultivo();break;
 				case 8: break;
 					
 			}

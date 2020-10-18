@@ -9,6 +9,7 @@ public class ImplementarCultivo {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		
+		Terreno tt = new Terreno("11",12,1,1,1,1);
 		System.out.println("Escoja el id del terreno en el que quiere sembrar");
 		
 		if (Terreno.getTerreno().size() !=0 ) {
@@ -31,7 +32,7 @@ public class ImplementarCultivo {
 		}else {
 			System.out.println("No dispone de terrenos, por favor cree uno");
 		}
-		
+		System.out.println(Cultivo.mostrarCultivos());
 		
 		
 	}
