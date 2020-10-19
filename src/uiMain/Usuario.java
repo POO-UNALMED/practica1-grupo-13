@@ -69,7 +69,7 @@ public class Usuario {
 					opcionElegida2 = readInt() - 1;
 					System.out.println("Se ha despedio a: ");
 					System.out.println(Terreno.getTerreno().get(opcionElegida).getCampesinos().get(opcionElegida2));
-					Terreno.getTerreno().get(opcionElegida).getCampesinos().get(opcionElegida2).renunciar();
+					Terreno.getTerreno().get(opcionElegida).getCampesinos().get(opcionElegida2).renunciar(opcionElegida, opcionElegida2);
 				}
 				else {
 					System.out.println("No hay campesinos vinculados a este terreno");
@@ -80,6 +80,7 @@ public class Usuario {
 					System.out.println("Seleccione un agronomo para despedir");
 					System.out.println(Agronomo.mostrarAgronomos());
 					opcionElegida = readInt() - 1;
+					Agronomo.getAgronomos().get(opcionElegida).renunciar(opcionElegida);
 				}
 				else {
 					System.out.println("No ha contratado agronomos");
@@ -235,7 +236,7 @@ public class Usuario {
 			System.out.println("5. Cultivar y cosechar");
 			System.out.println("6. Agregar terreno");
 			System.out.println("7. Fertilizar e irrigar terrenos");
-			System.out.println("8. Terminar");
+			System.out.println("8. Terminar" + "\n");
 			opcionElegida = readInt();
 			switch (opcionElegida) {
 				case 1: contratar();break;

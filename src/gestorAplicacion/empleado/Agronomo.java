@@ -39,8 +39,9 @@ public class Agronomo extends Empleado{
 	}
 	public static String mostrarAgronomos() {
 		String muestra = ""; int contador = 1;
-		for (Integer i = 0; i < agronomos.size(); i ++){
+		for (Integer i = 0; i < agronomos.size(); i++){
 				muestra = muestra + (contador) + ". " + agronomos.get(i).getCedula()  + "\n";
+				contador++;
 		}
 		return(muestra);
 	}
