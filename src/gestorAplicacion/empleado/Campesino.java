@@ -56,5 +56,9 @@ public class Campesino extends Empleado{
 		this.getTerreno().getCultivos().remove(cultivo);
 		Cultivo.getCultivos().remove(cultivo);
 	}
+	
+	public void fertilizar(Terreno terreno) {
+		terreno.fertilizarTerreno();
+	}
 }
  
