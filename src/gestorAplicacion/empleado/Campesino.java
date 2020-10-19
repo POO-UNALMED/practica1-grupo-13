@@ -11,7 +11,7 @@ public class Campesino extends Empleado{
 	}
 	public void renunciar() {
 		double x = Math.random();
-		if ((x < 0.2) && (Terreno.getTerreno().size() > 0)) {
+		if ((x < 0.15) && (Terreno.getTerreno().size() > 0)) {
 			for(int i = 0; i < Terreno.getTerreno().size(); i++) {
 				if(Terreno.getTerreno().get(i).getCampesinos().size() > 0) {
 					System.out.println(Terreno.getTerreno().get(i).getCampesinos().get(0));
