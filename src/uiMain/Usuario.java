@@ -197,12 +197,12 @@ public class Usuario {
 				Terreno terreno = Terreno.getTerreno().get(entrada - 1);
 				if (terreno.getCampesinos().isEmpty() == false) {
 					if (terreno.getCultivos().isEmpty() == false) {
-						System.out.println("Ingrese la opcion que corresponde al tipo: ");
+						System.out.println("Ingrese la opcion que corresponde al tipo ");
 						System.out.println(terreno.mostrarCultivos());
 						int eleccion = readInt();
 						Cultivo cultivo = terreno.getCultivos().get(eleccion - 1);
 						Campesino campesino = terreno.getCampesinos().peek();
-						System.out.println("Se ha recolectado del cultivo de tipo: " + cultivo.getTipoCultivo() + " "
+						System.out.println("Se ha recolectado del cultivo de tipo " + cultivo.getTipoCultivo() + " "
 								+ cultivo.getTamano() + " hectareas.");
 						campesino.recolectar(cultivo);
 						
