@@ -27,6 +27,7 @@ public class Pesticida {
 	}
 	public void matarAmenaza(Cultivo c) {
 		c.setAmenaza(null);
+		System.out.println("Se ha exterminado la amenaza!");
 		//Quedamos en eliminar el atributo estadoAmenaza
 		//Recibe el terreno y el cultivo donde está la amenaza
 		//Busca en los cultivos de Terreno y elimina la amenaza en el cultivo correspondiente 

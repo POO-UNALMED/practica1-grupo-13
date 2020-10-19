@@ -110,7 +110,6 @@ public class Usuario {
 			opcionElegida = readInt() - 1;
 			System.out.println(Cultivo.getCultivos().get(opcionElegida));
 			if(Cultivo.getCultivos().get(opcionElegida).getAmenaza() != (null)) {
-				System.out.print(Cultivo.getCultivos().get(opcionElegida));
 				System.out.println("¿Desea aplicar pesticida para eliminar la amenaza del cultivo?");
 				System.out.println("1. Si");
 				System.out.println("2. No");
@@ -226,7 +225,7 @@ public class Usuario {
 		do {
 			Amenaza.Amenazar();
 			renunciaAleatoria();
-			System.out.println("Selecciona una funcion");
+			System.out.println("\n"+"Selecciona una funcion");
 			System.out.println("1. Contratar");
 			System.out.println("2. Despedir");
 			System.out.println("3. Produccion total de los cultivos");
