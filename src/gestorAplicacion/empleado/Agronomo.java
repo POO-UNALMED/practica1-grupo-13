@@ -12,9 +12,14 @@ public class Agronomo extends Empleado{
 		terreno.setAgronomo(this);
 		agronomos.add(this);
 	}
-	public static void erradicarAmenaza(Amenaza amenaza, Cultivo cultivo) {
-		Pesticida pesticida = new Pesticida(amenaza);
-		pesticida.matarAmenaza(cultivo);
+	public static void erradicarAmenaza(Amenaza amenaza, Cultivo cultivo) { //parte nueva
+		if(cultivo.getTerreno().getAgronomo()!=null) {
+			Pesticida pesticida = new Pesticida(amenaza);
+			pesticida.matarAmenaza(cultivo);
+		}
+		else {
+			System.out.println("No hay agronomos en el terreno con id "+cultivo.getTerreno().getId());
+		}
 	}
 	public void renunciar() {
 		double x = Math.random();
