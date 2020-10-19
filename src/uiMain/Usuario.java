@@ -110,8 +110,7 @@ public class Usuario {
 			opcionElegida = readInt() - 1;
 			System.out.println(Cultivo.getCultivos().get(opcionElegida));
 			if(Cultivo.getCultivos().get(opcionElegida).getAmenaza() != (null)) {
-				System.out.print("El cultivo se encuentra bajo una amenaza de: ");
-				System.out.println(Cultivo.getCultivos().get(opcionElegida).getAmenaza());
+				System.out.print(Cultivo.getCultivos().get(opcionElegida));
 				System.out.println("¿Desea aplicar pesticida para eliminar la amenaza del cultivo?");
 				System.out.println("1. Si");
 				System.out.println("2. No");
