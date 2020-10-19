@@ -54,6 +54,7 @@ public class Campesino extends Empleado{
 
 		//Remove del cultivo en la lista de los cultivos estan en el terreno
 		this.getTerreno().getCultivos().remove(cultivo);
+		this.getTerreno().getTipos().remove(cultivo.getTipoCultivo());
 		Cultivo.getCultivos().remove(cultivo);
 	}
 	
