@@ -154,5 +154,13 @@ public class Cultivo {
 		return (muestra);
 	}
 
-	
+	public String toString() {
+		if(this.getAmenaza() == null) {
+			return "El cultivo de tipo " + this.getTipoCultivo() + " ubicado en el terreno " + this.getTerreno().getId() + " se encuentra bajo amenaza.\n " +
+		    "La amenaza que lo ataca es es de tipo " + this.getAmenaza().getTipo();
+		}
+		else {
+			return "El cultivo de tipo " + this.getTipoCultivo() + " ubicado en el terreno " + this.getTerreno().getId() + " no se encuentra bajo amenaza";
+		}
+	}
 }
