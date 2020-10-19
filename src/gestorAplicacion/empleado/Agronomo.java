@@ -22,11 +22,14 @@ public class Agronomo extends Empleado{
 		if ((x < 0.15) && (agronomos.size() > 0)) {
 			System.out.println(agronomos.get(y));
 			System.out.println("Ha renunciado.");
+			agronomos.get(y).getTerreno().setAgronomo(null);
+			agronomos.remove(y);
 		}
 	}
 	public void renunciar(int opcionElegida) {
 		System.out.println(agronomos.get(opcionElegida));
-		System.out.println("Ha renunciado.");
+		System.out.println("Ha sido despedido.");
+		agronomos.get(opcionElegida).getTerreno().setAgronomo(null);
 		agronomos.remove(opcionElegida);
 	}
 	public static String mostrarAgronomos() {
