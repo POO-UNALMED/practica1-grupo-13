@@ -149,7 +149,7 @@ public class Cultivo {
 	public static String mostrarCultivos() {
 		String muestra = "";
 		for (Integer i = 0; i < cultivos.size(); i ++) {
-			muestra = muestra + (i + 1) + ". " + "El cultivo de " + cultivos.get(i).tipoCultivo + ". En el terreno con id: " + cultivos.get(i).terreno.getId();
+			muestra = muestra + (i + 1) + ". " + "El cultivo de " + cultivos.get(i).tipoCultivo + ". En el terreno con id: " + cultivos.get(i).terreno.getId() + "\n";
 		}
 		return (muestra);
 	}
