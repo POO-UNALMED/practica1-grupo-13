@@ -32,13 +32,13 @@ public class Usuario {
 			terreno = readInt() - 1;
 			if(opcionElegida == 1) {
 				Campesino campe = new Campesino(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
-				System.out.println("Se ha creado un campesino.");
+				System.out.println("Se ha contratado un campesino.");
 				System.out.println(campe);
 			}
 			else if(opcionElegida == 2) {
 				if(Terreno.getTerreno().get(terreno).getAgronomo() == (null)) {
 					Agronomo agro = new Agronomo(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
-					System.out.println("Se ha creado un agronomo.");
+					System.out.println("Se ha contratado un agronomo.");
 					
 				}
 				else {
@@ -93,7 +93,7 @@ public class Usuario {
 		
 	}
 	public static void produccion() {
-		System.out.println("La cantidad de cultivos de cada clase es:");
+		System.out.println("Cantidad producida de cada tipo de cultivo");
 		System.out.println("Cantidad de papas: " + Cultivo.getPapaProducida() + " hectareas");
 		System.out.println("Cantidad de sandias: " + Cultivo.getSandiaProducida() + " hectareas");
 		System.out.println("Cantidad de bananos: " + Cultivo.getBananoProducido() + " hectareas");
@@ -202,6 +202,8 @@ public class Usuario {
 						int eleccion = readInt();
 						Cultivo cultivo = terreno.getCultivos().get(eleccion - 1);
 						Campesino campesino = terreno.getCampesinos().peek();
+						System.out.println("Se ha recolectado del cultivo de tipo: " + cultivo.getTipoCultivo() + " "
+								+ cultivo.getTamano() + " hectareas.");
 						campesino.recolectar(cultivo);
 						
 					}else {
