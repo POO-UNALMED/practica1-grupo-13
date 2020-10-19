@@ -14,9 +14,10 @@ public class Campesino extends Empleado{
 		if ((x < 0.2) && (Terreno.getTerreno().size() > 0)) {
 			for(int i = 0; i < Terreno.getTerreno().size(); i++) {
 				if(Terreno.getTerreno().get(i).getCampesinos().size() > 0) {
-					System.out.println(Terreno.getTerreno().get(i).getCampesinos().get(i));
+					System.out.println(Terreno.getTerreno().get(i).getCampesinos().get(0));
 					System.out.println("Ha renunciado");
-					Terreno.getTerreno().get(i).getCampesinos().remove(i);
+					Terreno.getTerreno().get(i).getCampesinos().remove(0);
+					break;
 				}
 			}
 		}
