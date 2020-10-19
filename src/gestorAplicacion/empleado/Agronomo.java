@@ -18,7 +18,7 @@ public class Agronomo extends Empleado{
 			pesticida.matarAmenaza(cultivo);
 		}
 		else {
-			System.out.println("No hay agronomos en el terreno con id "+cultivo.getTerreno().getId());
+			System.out.println("No hay agronomo en el terreno con id "+cultivo.getTerreno().getId());
 		}
 	}
 	public void renunciar() {
