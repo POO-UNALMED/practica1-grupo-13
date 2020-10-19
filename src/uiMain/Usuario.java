@@ -152,7 +152,7 @@ public class Usuario {
 				System.out.println("Terreno fertilizado ");
 		        System.out.println(Terreno.getTerreno().get(id).cultivosPermitidos());
 			}else {
-				System.out.println("No ha contratado campesinos para este terreno.\nDebe contartar al menos uno para realizar este trabajo");
+				System.out.println("No ha contratado campesinos para este terreno.\nDebe contratar al menos uno para realizar este trabajo");
 			}
 		}else {
 			System.out.println("No dispone de terrenos, por favor cree uno");
