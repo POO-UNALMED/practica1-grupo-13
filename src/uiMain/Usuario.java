@@ -165,12 +165,12 @@ public class Usuario {
 		int opcion = readInt();
 		if (opcion == 1) {
 			if (Terreno.getTerreno().size() !=0 ) {
-				System.out.println("Escoja el id del terreno en el que quiere sembrar: ");
+				System.out.println("Escoja la opcion del terreno en el que quiere sembrar: ");
 				System.out.println(Terreno.mostrarTerrenos());
 				int entrada = readInt();
 				Terreno terreno = Terreno.getTerreno().get(entrada - 1);
-				terreno.getCultivoPermitido();     //Funcion que actualiza los tipos disponibles
-				
+				if(terreno.getCampesinos().size() != 0) {
+					terreno.getCultivoPermitido();     //Funcion que actualiza los tipos disponibles
 				if (terreno.getCultivoPermitido().size() != 0) {
 					System.out.println(terreno.cultivosPermitidos());
 					System.out.println("Escriba el tipo que quiere sembrar: ");
@@ -181,18 +181,19 @@ public class Usuario {
 						System.out.println(Cultivo.crearCultivo(tipo, tamaño, terreno));
 					}else {
 						System.out.println("Se ha cancelado la operacion, el tamaño del cultivo no concuerda con el del terreno");
+						}
+					}else {
+						System.out.println("No dispone con los requerimientos suficientes para sembrar en este terreno, por favor irrigue o fertilice");
 					}
-					
 				}else {
-					System.out.println("No dispone con los requerimientos suficientes para sembrar en este terreno, por favor irrigue o fertilice");
+					System.out.println("Debe contratar al menos un campesino para el terreno");
 				}
-				
 			}else {
 				System.out.println("No dispone de terrenos, por favor cree uno");
 			}
 		}else if (opcion == 2) {
 			if (Terreno.getTerreno().size() != 0 ) {
-				System.out.println("Escoja el id del terreno en el que quiere recolectar: ");
+				System.out.println("Escoja la opcion del terreno en el que quiere recolectar: ");
 				System.out.println(Terreno.mostrarTerrenos());
 				int entrada = readInt();
 				Terreno terreno = Terreno.getTerreno().get(entrada - 1);
@@ -202,10 +203,16 @@ public class Usuario {
 						System.out.println(terreno.mostrarCultivos());
 						int eleccion = readInt();
 						Cultivo cultivo = terreno.getCultivos().get(eleccion - 1);
-						Campesino campesino = terreno.getCampesinos().peek();
-						System.out.println("Se ha recolectado del cultivo de tipo " + cultivo.getTipoCultivo() + " "
-								+ cultivo.getTamano() + " hectareas.");
-						campesino.recolectar(cultivo);
+						if(cultivo.getAmenaza() == null) {
+							Campesino campesino = terreno.getCampesinos().peek();
+							System.out.println("Se ha recolectado del cultivo de tipo " + cultivo.getTipoCultivo() + " "
+									+ cultivo.getTamano() + " hectareas.");
+							campesino.recolectar(cultivo);
+						}
+						else {
+							System.out.println("El terreno se encuentra bajo una amenaza, por favor, exterminela para cosechar el cultivo");
+						}
+						
 						
 					}else {
 						System.out.println("El terreno no tiene cultivos, por favor cree uno");
