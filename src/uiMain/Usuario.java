@@ -39,6 +39,7 @@ public class Usuario {
 				if(Terreno.getTerreno().get(terreno).getAgronomo() == (null)) {
 					Agronomo agro = new Agronomo(nombre, sueldo, cedula, Terreno.getTerreno().get(terreno));
 					System.out.println("Se ha contratado un agronomo.");
+					System.out.println(agro);
 					
 				}
 				else {
