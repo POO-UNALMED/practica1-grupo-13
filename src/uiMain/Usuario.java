@@ -139,7 +139,7 @@ public class Usuario {
 	}
 	public static void ferrigar() {
 		if(Terreno.getTerreno().size() > 0) {
-			System.out.println("Escoja el terreno que desea fertilizar e irrigar: ");
+			System.out.println("Escoja el terreno que desea fertilizar e irrigar: "+"\n");
 			System.out.println(Terreno.mostrarTerrenos());
 			int id = readInt() - 1;
 			if(Terreno.getTerreno().get(id).getCampesinos().size() > 0) {
