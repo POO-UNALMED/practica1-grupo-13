@@ -143,7 +143,7 @@ public class Usuario {
 			System.out.println("Escoja el terreno que desea fertilizar e irrigar: ");
 			int id = readInt() - 1;
 			if(Terreno.getTerreno().get(id).getCampesinos().size() > 0) {
-				int trabajador = (int) Math.random()*Terreno.getTerreno().get(id).getCampesinos().size();
+				int trabajador = (int) Math.random()*(Terreno.getTerreno().get(id).getCampesinos().size()-1);
 				Campesino campesinoFertiliza = Terreno.getTerreno().get(id).getCampesinos().get(trabajador);
 				campesinoFertiliza.fertilizar(Terreno.getTerreno().get(id));
 				Terreno.getTerreno().get(id).getCultivoPermitido();
