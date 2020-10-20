@@ -1,8 +1,10 @@
 package gestorAplicacion.empleado;
 import gestorAplicacion.terreno.*;
+
+import java.io.Serializable;
 import java.util.*;
 
-public class Campesino extends Empleado{
+public class Campesino extends Empleado implements Serializable{
 	public Campesino() {
 	}
 	public Campesino(String nombre, int sueldo, int cedula, Terreno terreno) {

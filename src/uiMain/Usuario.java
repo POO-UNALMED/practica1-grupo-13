@@ -180,7 +180,7 @@ public class Usuario {
 					if (tamaño <= terreno.getTamanoDisponible()) {
 						System.out.println(Cultivo.crearCultivo(tipo, tamaño, terreno));
 					}else {
-						System.out.println("Se ha cancelado la operacion, el tamaño del cultivo no concuerda con el del terreno");
+						System.out.println("Se ha cancelado la operacion, el tamaño del cultivo no concuerda con el tamano disponible del terreno");
 						}
 					}else {
 						System.out.println("No dispone con los requerimientos suficientes para sembrar en este terreno, por favor irrigue o fertilice");
