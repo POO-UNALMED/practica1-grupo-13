@@ -1,11 +1,12 @@
 package gestorAplicacion.terreno;
 import java.util.*;
+import java.io.Serializable;
 import java.lang.Comparable; //Interface Comparable
 
 import gestorAplicacion.Amenaza;
 // import gestorAplicacion.empleado.Administrador; //Esto se debe quitar 
 
-public class Cultivo {
+public class Cultivo implements Serializable{
 	
 	private static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// Faltan crear funciones-- Sergio 
 	private String tipoCultivo;

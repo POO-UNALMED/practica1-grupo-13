@@ -1,8 +1,10 @@
 package gestorAplicacion;
 
+import java.io.Serializable;
+
 import gestorAplicacion.terreno.*;
 
-public class Pesticida {
+public class Pesticida implements Serializable{
 	private String tipo;
 	private String color;
 	private Amenaza amenaza;

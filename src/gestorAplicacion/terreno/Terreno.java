@@ -1,9 +1,10 @@
 package gestorAplicacion.terreno;
 import gestorAplicacion.empleado.*;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Terreno{
+public class Terreno implements Serializable{
 	private final String id; //Nuestra constante 
 	private LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();
 	private LinkedList<String> tipos = new LinkedList<String>(); //Tipos de cultivo presentes en el terreno 

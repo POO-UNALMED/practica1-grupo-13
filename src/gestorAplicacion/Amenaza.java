@@ -1,9 +1,10 @@
 package gestorAplicacion;
 
+import java.io.Serializable;
 import java.util.*;
 import gestorAplicacion.terreno.*;
 
-public class Amenaza {
+public class Amenaza implements Serializable{
 	private String tipoAmenaza;
 	private Cultivo cultivo; //Se guardaran los Cultivos
 	private double cantidad;//Cantidad del cultivo afectada 

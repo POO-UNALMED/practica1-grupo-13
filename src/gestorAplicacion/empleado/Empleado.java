@@ -1,8 +1,10 @@
 package gestorAplicacion.empleado;
 
+import java.io.Serializable;
+
 import gestorAplicacion.terreno.*;
 
-public abstract class Empleado {
+public abstract class Empleado implements Serializable{
 	protected String nombre;
 	protected int sueldo;
 	protected int cedula;

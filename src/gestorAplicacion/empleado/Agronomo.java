@@ -1,9 +1,10 @@
 package gestorAplicacion.empleado;
+import java.io.Serializable;
 import java.util.LinkedList;
 import gestorAplicacion.terreno.*;
 import gestorAplicacion.*;
 
-public class Agronomo extends Empleado{
+public class Agronomo extends Empleado implements Serializable{
 	private static LinkedList<Agronomo> agronomos = new LinkedList<Agronomo>();
 	public Agronomo() {	
 	}
