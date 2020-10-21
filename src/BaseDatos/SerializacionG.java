@@ -16,8 +16,7 @@ public class SerializacionG {
 
 	public static void Save() {
 		try {
-			entradas = new ObjectOutputStream(
-					new FileOutputStream(fichero.getAbsolutePath() + "\\src\\BaseDatos\\temp\\Cultivos.txt"));
+			entradas = new ObjectOutputStream(new FileOutputStream(fichero.getAbsolutePath() + "\\src\\BaseDatos\\temp\\Cultivos.txt"));
 			for (int i = 0; i < Cultivo.getCultivos().size(); i++) {
 				entradas.writeObject(Cultivo.getCultivos().get(i));
 			}
