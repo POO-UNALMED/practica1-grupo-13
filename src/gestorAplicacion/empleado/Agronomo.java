@@ -22,6 +22,14 @@ public class Agronomo extends Empleado implements Serializable{
 			System.out.println("No hay agronomo en el terreno con id "+cultivo.getTerreno().getId()+" por favor contrate uno para exterminar la amenaza");
 		}
 	}
+	public static String mostrarAgronomos() {
+		String muestra = ""; int contador = 1;
+		for (Integer i = 0; i < agronomos.size(); i++){
+				muestra = muestra + (contador) + ". " + agronomos.get(i).getCedula()  + "\n";
+				contador++;
+		}
+		return(muestra);
+	}
 	public void renunciar() {
 		double x = Math.random();
 		int y = (int) Math.random()*agronomos.size();
@@ -37,14 +45,6 @@ public class Agronomo extends Empleado implements Serializable{
 		System.out.println("Ha sido despedido.");
 		agronomos.get(opcionElegida).getTerreno().setAgronomo(null);
 		agronomos.remove(opcionElegida);
-	}
-	public static String mostrarAgronomos() {
-		String muestra = ""; int contador = 1;
-		for (Integer i = 0; i < agronomos.size(); i++){
-				muestra = muestra + (contador) + ". " + agronomos.get(i).getCedula()  + "\n";
-				contador++;
-		}
-		return(muestra);
 	}
 	public String toString() {
 		return("\n" + "El agronomo con:" + "\n" + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +

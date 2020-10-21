@@ -124,11 +124,7 @@ public class Usuario {
 				if (opcionElegida2 == 1) {
 					Amenaza amenaza = Cultivo.getCultivos().get(opcionElegida).getAmenaza();
 					Cultivo cultivo = Cultivo.getCultivos().get(opcionElegida);
-					if (cultivo.getTerreno().getAgronomo()!=null) {
-						Agronomo.erradicarAmenaza(amenaza, cultivo);
-					} else {
-						System.out.println("Por favor contratar un agronomo para el terreno en el que se encuentra este cultivo");
-					}
+					Agronomo.erradicarAmenaza(amenaza, cultivo);
 				} else {
 				}
 			}

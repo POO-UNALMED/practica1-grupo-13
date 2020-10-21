@@ -30,7 +30,7 @@ public abstract class Empleado implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+|
 	public String getNombre() {
 		return nombre;
 	}

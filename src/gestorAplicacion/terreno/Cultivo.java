@@ -8,7 +8,7 @@ import gestorAplicacion.Amenaza;
 
 public class Cultivo implements Serializable{
 	
-	private static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// Faltan crear funciones-- Sergio 
+	private static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();// 
 	private String tipoCultivo;
 	private int tamano;
 	private Amenaza amenaza;
@@ -32,7 +32,7 @@ public class Cultivo implements Serializable{
 		this.fosforo = fosforo; 
 		this.irrigacion = irrigacion;
 		this.terreno = terreno;
-		this.agregarCultivo(this); //Agrego cultivos cada vez que se cree uno
+		this.agregarCultivo(this);
 	}
 	
 	// Se le pide al usuario ingresar el tipo de cultivo que quiere sembrar y el tamaño(dentro del Main), si es papa se ejecuta esta funcion o una de las siguientes:
