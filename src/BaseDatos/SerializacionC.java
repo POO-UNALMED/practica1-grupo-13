@@ -1,13 +1,14 @@
 package BaseDatos;
 
+import gestorAplicacion.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.LinkedList;
-
-import gestorAplicacion.*;
 import gestorAplicacion.empleado.*;
 import gestorAplicacion.terreno.*;
+import java.io.IOException;
+import java.io.FileNotFoundException;
 
 public class SerializacionC {
 	private static ObjectInputStream entradas;

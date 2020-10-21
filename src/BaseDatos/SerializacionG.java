@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
+import java.io.FileNotFoundException;
 
 public class SerializacionG {
 	static File fichero = new File("");
