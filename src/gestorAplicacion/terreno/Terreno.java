@@ -172,4 +172,6 @@ public class Terreno implements Serializable{
 				"Potasio disponible: " + (Math.round(this.potasioDisponible*100.0)/100.0) + "\n" + "Fosforo disponible: " + (Math.round(this.fosforoDisponible*100.0)/100.0) + "\n" +
 				"Nivel de irrigacion: " + (Math.round(this.irrigacionActual*100.0)/100.0);
 	}
+
+	
 }

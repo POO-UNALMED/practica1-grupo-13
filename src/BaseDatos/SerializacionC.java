@@ -35,25 +35,11 @@ public class SerializacionC {
 			Objeto = entradas.readObject();
 			while (Objeto != null) {
 				Terreno.getTerreno().add((Terreno) Objeto);
-				Objeto = entradas.readObject();
-			}						
-			entradas.close();
-			
-		} catch (java.io.IOException e) {
-
-		} catch (ClassNotFoundException e) {
-
-		}
-			
-		try {
-			entradas = new ObjectInputStream(new FileInputStream(fichero.getAbsolutePath() + "\\src\\BaseDatos\\temp\\Campesinos.txt"));
-			Objeto = entradas.readObject();
-			while (Objeto != null) {
-				for (Terreno tempTerreno : Terreno.getTerreno()) {
-					LinkedList<Campesino> tempCampesinos = new LinkedList<Campesino>();
-					tempCampesinos = tempTerreno.getCampesinos();
-					tempCampesinos.add((Campesino) Objeto);
+				Terreno tempTerreno = (Terreno) Objeto;
+				if (tempTerreno.getAgronomo()!=null) {
+					Agronomo.getAgronomos().add(tempTerreno.getAgronomo());
 				}
+				
 				Objeto = entradas.readObject();
 			}						
 			entradas.close();
@@ -63,39 +49,6 @@ public class SerializacionC {
 		} catch (ClassNotFoundException e) {
 
 		}
-			
-		try {
-			entradas = new ObjectInputStream(new FileInputStream(fichero.getAbsolutePath() + "\\src\\BaseDatos\\temp\\Agronomos.txt"));
-			Objeto = entradas.readObject();
-			
-			while (Objeto != null) {
-				Agronomo.getAgronomos().add((Agronomo) Objeto);
-				Objeto = entradas.readObject();
-			}						
-			entradas.close();
-
-		} catch (java.io.IOException e) {
-
-		} catch (ClassNotFoundException e) {
-
-		}
-		
-		try {
-			entradas = new ObjectInputStream(new FileInputStream(fichero.getAbsolutePath() + "\\src\\BaseDatos\\temp\\Amenazas.txt"));
-			Objeto = entradas.readObject();
-			while (Objeto != null) {
-				for (Cultivo tempCultivo : Cultivo.getCultivos()) {
-					tempCultivo.setAmenaza((Amenaza) Objeto);
-				}
-				Objeto = entradas.readObject();
-			}
-			entradas.close();
-			
-		} catch (java.io.IOException e) {
-
-		} catch (ClassNotFoundException e) {
-
-		}
-	
+				
 	}
 }
