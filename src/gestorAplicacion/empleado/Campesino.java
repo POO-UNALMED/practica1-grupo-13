@@ -3,14 +3,40 @@ import gestorAplicacion.terreno.*;
 
 import java.io.Serializable;
 import java.util.*;
-
+/**
+ * Esta clase define objetos de tipo Campesino, que hereda de la clase Empleado
+ * contienen todos los atributos que posee la clase Empleado
+ * Las instancias de la clase Empleado deben ser asignadas a un Terreno al momento de ser creadas 
+ */
 public class Campesino extends Empleado implements Serializable{
+	/**
+	 * Constructor por defecto de la clase Campesino
+	 */
 	public Campesino() {
 	}
+	//Cierre del constructor
+	/**
+	 * Constructor para crear una instancia de Empleado
+	 * Establece a una instancia de Terreno el campesino que va a trabajar en el
+	 * @param nombre El parametro nombre establece el nombre del Campesino usando a su padre
+	 * @param sueldo El parametro sueldo establece el sueldo del Campesino usando a su padre
+	 * @param cedula El parametro cedula establece la cedula del Campesino usando a su padre
+	 * @param terreno El parametro Terreno establece el Terreno en el que trabajara
+	 * el campesino usando a su padre
+	 */
 	public Campesino(String nombre, int sueldo, int cedula, Terreno terreno) {
 		super(nombre, sueldo, cedula, terreno);
 		terreno.agregarCampesino(this);
 	}
+	//Cierre del constructor
+	/**
+	 * Metodo renunciar, que genera un numero aleatorio x (entre 0 y 1) que representa 
+	 * una probabilidad del 15% de que un empleado pueda renunciar, obtiene la lista de todos
+	 * los terrenos creados, obtiene los campesinos que trabajan en cadad Terreno y selecciona 
+	 * al primero para que renuncie solo si x reprenseta menos del 15 por ciento de 
+	 * probabiliad 
+	 * 
+	 */
 	public void renunciar() {
 		double x = Math.random();
 		if ((x < 0.15) && (Terreno.getTerreno().size() > 0)) {
@@ -24,9 +50,21 @@ public class Campesino extends Empleado implements Serializable{
 			}
 		}
 	}
+	// Cierre del metodo renunciar
+	/**
+	 * 
+	 * @param opcionElegida
+	 * @param opcionElegida2
+	 */
 	public void renunciar(int opcionElegida, int opcionElegida2) {
 		Terreno.getTerreno().get(opcionElegida).getCampesinos().remove(opcionElegida2);
 	}
+	// Cierre del metodo renunciar
+	/**
+	 * Metodo que muestra todas las instancias de Campesino creadas
+	 * @return devuleve un String con las cedulas de cada uno de los Campesinos en todos
+	 * los terrenos existentes
+	 */
 	public static String mostrarCampesinos(Terreno terreno) {
 		String muestra = "";
 		for (Integer i = 0; i < terreno.getCampesinos().size(); i ++){
@@ -34,11 +72,24 @@ public class Campesino extends Empleado implements Serializable{
 		}
 		return(muestra);
 	}
+	// Cierre del metodo mostarCampesinos
+	/**
+	 * Metodo toString
+	 * @return devuelve un string con todos los atributos de la instancia Campesino
+	 */
+	@Override
 	public String toString() {
 		return("\n" + "El campesino con:" + "\n" + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
 				"Sueldo: " + this.getSueldo() + "\n" + "Vinculado a terreno: " + this.getTerreno().getId());
 	}
-	
+	// Cierre del metodo toString
+	/**
+	 * Metodo recolectar, que recoge toda la cantidad sembrada en cultivo, aumentando el tamano
+	 * disponible en el terreno que estaba, luego eliminando el cultivo para que pueda
+	 * ser sembrado posteriormente de nuevo, y aumenta la cantidad producida de acuerdo 
+	 * al tipo de cultivo
+	 * @param cultivo Parametro cultivo que representa el cultivo que se quiere recolectar
+	 */
 	public void recolectar(Cultivo cultivo) {
 		//Modificar el size disponible del terreno que contiene el cultivo que se esta recolectando
 		int tempSize = cultivo.getTamano();
@@ -58,9 +109,16 @@ public class Campesino extends Empleado implements Serializable{
 		this.getTerreno().getTipos().remove(cultivo.getTipoCultivo());
 		Cultivo.getCultivos().remove(cultivo);
 	}
+	// Cierre del metodo Recolectar
 	
+	/**
+	 * Metodo que recibe el terreno que se quiere fertilizar para poder sembrar cultivos
+	 * en el
+	 * @param terreno Parametro Terreno que representa uns instancia de la clase Terreno
+	 */
 	public void fertilizar(Terreno terreno) {
 		terreno.fertilizarTerreno();
 	}
+	// Cierre del metodo fertilizar 
 }
  
