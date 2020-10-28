@@ -17,20 +17,43 @@ import java.util.*;
  * momento de ser creado
  */
 public class Terreno implements Serializable {
-	// Atributos de la clase
+	/** id que idenfica el terreno */
 	private final String id;
+	/** lista de los cultivos que se encuentran en el terreno */
 	private LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();
+	/** lista que guarda los cultivos que tiene sembrados */
 	private LinkedList<String> tipos = new LinkedList<String>();
+	/** lista de cultivos que pueden ser sembrados en el terreno */
 	private LinkedList<String> cultivoPermitido = new LinkedList<String>();
+	/** lista de los campesinos que trabajan en el terreno */
 	private LinkedList<Campesino> campesinos = new LinkedList<Campesino>();
-	// Usado para mostrar al usuario todos los terrenos creados
+	/** Lista de todos los terrenos que se han creado */
 	private static LinkedList<Terreno> terrenosTotales = new LinkedList<Terreno>();
+	/** Agronomo que trabaja en el terreno */
 	private Agronomo agronomo;
+	/** Tamano del terreno creado */
 	private int tamano;
+	/** Tamano que posee el terreno en el cual se puede sembrar */
 	private int tamanoDisponible;
+	/**
+	 * Cantidad de nitrogeno disponible (entre 0 y 1) que posee el terreno al ser
+	 * creado
+	 */
 	private double nitrogenoDisponible;
+	/**
+	 * Cantidad de potasio disponible (entre 0 y 1) que posee el terreno al ser
+	 * creado
+	 */
 	private double potasioDisponible;
+	/**
+	 * Cantidad de fosforo disponible (entre 0 y 1) que posee el terreno al ser
+	 * creado
+	 */
 	private double fosforoDisponible;
+	/**
+	 * Cantidad de irrigacion disponible (entre 0 y 1) que posee el terreno al ser
+	 * creado
+	 */
 	private double irrigacionActual;
 
 	/**
@@ -64,7 +87,6 @@ public class Terreno implements Serializable {
 		terrenosTotales.add(this);
 	}
 
-	// Cierre del constructor
 	/**
 	 * Metodo constructor para crear una instancia de la clase de Terreno con
 	 * parametros de nutrientes e irrigacion aleatorios
@@ -76,7 +98,6 @@ public class Terreno implements Serializable {
 	public Terreno(String id, int tamano) {
 		this(id, tamano, Math.random(), Math.random(), Math.random(), Math.random());
 	}
-	// Cierre del constructor
 
 	/**
 	 * Metodo que verifica si posee los parametros de nutrientes, nivel de
@@ -121,65 +142,97 @@ public class Terreno implements Serializable {
 
 		return cultivoPermitido;
 	}
-	// Cierre del metodo getCultivoPermitido
+
 	/**
-	 * Metodo que agrega a la lista culivos permitidos un nuevo tipo de cultivo sembrado
+	 * Metodo que agrega a la lista culivos permitidos un nuevo tipo de cultivo
+	 * sembrado
+	 * 
 	 * @param cultivoP nuevo tipo de cultivo sembrado que fue agragado al terreno
 	 */
-	public void agregrarCultivoP(String cultivoP) { // cultivoPermitido
+	public void agregrarCultivoP(String cultivoP) {
 		this.cultivoPermitido.add(cultivoP);
 	}
+
 	/**
-	 * Metodo que devulve la lista de todos los campesinos que trabajan en un terreno especifico
-	 * @return LinkedList<Campesino> lista con las instancias de los campesinos que trabajan en el terreno
+	 * Metodo que devulve la lista de todos los campesinos que trabajan en un
+	 * terreno especifico
+	 * 
+	 * @return LinkedList<Campesino> lista con las instancias de los campesinos que
+	 *         trabajan en el terreno
 	 */
 	public LinkedList<Campesino> getCampesinos() {
 		return this.campesinos;
 	}
+
 	/**
-	 * Metodo que agrega un campesino a la lista de los campesinos que actualmente trabajan en el terreno
+	 * Metodo que agrega un campesino a la lista de los campesinos que actualmente
+	 * trabajan en el terreno
+	 * 
 	 * @param campesino, Representa el campesino contratado
 	 */
 	public void agregarCampesino(Campesino campesino) {
 		this.campesinos.add(campesino);
 	}
+
 	/**
-	 * Metodo que devuelve todos los tipos de cultivos que se encuentran sembrados en el terreno
-	 * @return LinkedList<Srting> la lista contiene en forma de texto los tipos de cultivos
+	 * Metodo que devuelve todos los tipos de cultivos que se encuentran sembrados
+	 * en el terreno
+	 * 
+	 * @return LinkedList<Srting> la lista contiene en forma de texto los tipos de
+	 *         cultivos
 	 */
 	public LinkedList<String> getTipos() {
 		return this.tipos;
 	}
+
 	/**
-	 * Metodo que agrega un tipo de cultivo (papa, sandia, mango, banano o fresa) a la lista de los tipos
+	 * Metodo que agrega un tipo de cultivo (papa, sandia, mango, banano o fresa) a
+	 * la lista de los tipos
+	 * 
 	 * @param tipo, contiene los tipos de cultivos
 	 */
 	public void agregarTipo(String tipo) {
 		this.tipos.add(tipo);
 	}
+
 	/**
-	 * Metodo que devuelve una lista con todas las instancias de la clase Cultivo {@link Cultivo}
-	 * @return LinkedList<Cultivo> lista que guarda todos los cultivos sembrados en un Terreno
+	 * Metodo que devuelve una lista con todas las instancias de la clase Cultivo
+	 * {@link Cultivo}
+	 * 
+	 * @return LinkedList<Cultivo> lista que guarda todos los cultivos sembrados en
+	 *         un Terreno
 	 */
 	public LinkedList<Cultivo> getCultivos() {
 		return this.cultivos;
 	}
+
 	/**
-	 * Metodo que agrega un nuevo cultivo sembrado y reduce el tamano disponible del Terreno
+	 * Metodo que agrega un nuevo cultivo sembrado y reduce el tamano disponible del
+	 * Terreno
+	 * 
 	 * @param cultivo que se va a sembrar en el terreno
 	 */
 	public void agregarCultivo(Cultivo cultivo) {
 		this.cultivos.add(cultivo);
 		tamanoDisponible -= cultivo.getTamano();
 	}
+
 	/**
 	 * Metodo que devuelve todos los terrenos que han sido creados
+	 * 
 	 * @return LinkedList<Terreno> contiene todos los terrenos creados
 	 */
 	public static LinkedList<Terreno> getTerrenos() {
 		return terrenosTotales;
 	}
 
+	/**
+	 * Metodo que retorna la instancia de un terreno que se busca por su id
+	 * 
+	 * @param id, el id del terreno que quiere ser buscado
+	 * @return Terreno, devulve la instancia del terreno al ser encontrado, puede
+	 *         ser null si no es encontrado
+	 */
 	public static Terreno buscarTerreno(String id) {
 		Iterator<Terreno> terreno = terrenosTotales.iterator();
 		Terreno tExistente = null;
@@ -192,9 +245,15 @@ public class Terreno implements Serializable {
 		return tExistente;
 	}
 
-	public String cultivosPermitidos() { // se utiliza en cultivo
-		ListIterator iterador = cultivoPermitido.listIterator(); /// También funcionaría con el iterador declarado en la
-																	/// anterior
+	/**
+	 * Metodo que informa al usuario los cultivos que pueden ser sembrados en el
+	 * terreno
+	 * 
+	 * @return texto con los tipos de cultivos que el terreno permite, aquellos que
+	 *         no estan sembrados
+	 */
+	public String cultivosPermitidos() {
+		ListIterator iterador = cultivoPermitido.listIterator();
 		StringBuffer lista = new StringBuffer("Los cultivos que permite el terreno son:\n");
 		while (iterador.hasNext()) {
 			String tipo = (String) iterador.next();
@@ -203,6 +262,12 @@ public class Terreno implements Serializable {
 		return lista.toString();
 	}
 
+	/**
+	 * Metodo que muestra los cultivos que estan sembrados en el cultivo
+	 * 
+	 * @return texto con los tipos de cultivos que se encuentran sembrados en el
+	 *         terreno
+	 */
 	public String mostrarCultivos() {
 		ListIterator iterador = tipos.listIterator();
 		StringBuffer lista = new StringBuffer("Eliga una de las siguientes opciones \n");
@@ -214,6 +279,13 @@ public class Terreno implements Serializable {
 		return lista.toString();
 	}
 
+	/**
+	 * Metodo encargado de estabelcer los parametros necesarios para que un cultivo
+	 * pueda ser creado en el terreno
+	 * 
+	 * @return la descripcion del terreno llamando ejecutando su propio metodo
+	 *         toString
+	 */
 	public String fertilizarTerreno() {
 		this.nitrogenoDisponible = 0.7;
 		this.potasioDisponible = 0.7;
@@ -222,27 +294,60 @@ public class Terreno implements Serializable {
 		return this.toString();
 	}
 
+	/**
+	 * Metodo que informa el tamano disponible para la creacion de nuevos cultivos
+	 * 
+	 * @return tamanoDisponible
+	 */
 	public int getTamanoDisponible() {
 		return tamanoDisponible;
 	}
 
+	/**
+	 * Metodo que actualiza el tamano disponible tel terreno
+	 * 
+	 * @param tamano, representa el tamano disponible del terreno
+	 */
 	public void setTamanoDisponible(int tamano) {
 		this.tamanoDisponible += tamano;
 	}
 
+	/**
+	 * Informa el agrnomo que trabaja en el terreno
+	 * 
+	 * @return la instancia de la clase Agrnomo asociada al terreno {@link Agronomo}
+	 */
 	public Agronomo getAgronomo() {
 		return this.agronomo;
 	}
 
+	/**
+	 * Metodo que le establece a un terreno el agrnomo que trabajara en el
+	 * {@link Agronomo}
+	 * 
+	 * @param agronomo instancia de la clase Agrnomo asociada al terreno
+	 *                 {@link Agronomo}
+	 */
 	public void setAgronomo(Agronomo agronomo) {
 		this.agronomo = agronomo;
 	}
 
+	/**
+	 * Metodo que informa el Id del terreno
+	 * 
+	 * @return id del terreno
+	 */
 	public String getId() {
 		return this.id;
 	}
 
-	public static String mostrarTerrenos() { // saca el linkedList terrenosTotales, y le muestra al usuario sus ids
+	/**
+	 * Metodo encargado de mostrar todos los ids de los terrenos creados
+	 * 
+	 * @return String que describe en forma de texto todos los ids de los terrenos
+	 *         creados
+	 */
+	public static String mostrarTerrenos() {
 		String muestra = "";
 		for (Integer i = 0; i < terrenosTotales.size(); i++) {
 			muestra = muestra + "Opcion " + (i + 1) + ": " + terrenosTotales.get(i).getId() + "\n";
@@ -250,6 +355,12 @@ public class Terreno implements Serializable {
 		return (muestra);
 	}
 
+	/**
+	 * Metodo que se escarga de mostrar los parametros con los que quedo el terreno
+	 * creado
+	 * 
+	 * @return String que describe cada uno de los parametros que posee el terreno
+	 */
 	public String toString() {
 		return "Se ha creado un nuevo terreno con las siguientes propiedades:\n" + "Nitrogeno disponible: "
 				+ (Math.round(this.nitrogenoDisponible * 100.0) / 100.0) + "\n" + "Potasio disponible: "

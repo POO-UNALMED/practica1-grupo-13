@@ -13,7 +13,6 @@ import gestorAplicacion.Amenaza;
  *
  */
 public class Cultivo implements Serializable {
-	// Atributos de la clase
 	/** Lista que guarda todos los cultivos creados */
 	private static LinkedList<Cultivo> cultivos = new LinkedList<Cultivo>();//
 	/**
