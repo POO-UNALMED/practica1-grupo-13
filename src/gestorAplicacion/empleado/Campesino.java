@@ -39,12 +39,12 @@ public class Campesino extends Empleado implements Serializable{
 	 */
 	public void renunciar() {
 		double x = Math.random();
-		if ((x < 0.15) && (Terreno.getTerreno().size() > 0)) {
-			for(int i = 0; i < Terreno.getTerreno().size(); i++) {
-				if(Terreno.getTerreno().get(i).getCampesinos().size() > 0) {
-					System.out.println(Terreno.getTerreno().get(i).getCampesinos().get(0));
+		if ((x < 0.15) && (Terreno.getTerrenos().size() > 0)) {
+			for(int i = 0; i < Terreno.getTerrenos().size(); i++) {
+				if(Terreno.getTerrenos().get(i).getCampesinos().size() > 0) {
+					System.out.println(Terreno.getTerrenos().get(i).getCampesinos().get(0));
 					System.out.println("Ha renunciado");
-					Terreno.getTerreno().get(i).getCampesinos().remove(0);
+					Terreno.getTerrenos().get(i).getCampesinos().remove(0);
 					break;
 				}
 			}
@@ -57,7 +57,7 @@ public class Campesino extends Empleado implements Serializable{
 	 * @param opcionElegida2
 	 */
 	public void renunciar(int opcionElegida, int opcionElegida2) {
-		Terreno.getTerreno().get(opcionElegida).getCampesinos().remove(opcionElegida2);
+		Terreno.getTerrenos().get(opcionElegida).getCampesinos().remove(opcionElegida2);
 	}
 	// Cierre del metodo renunciar
 	/**

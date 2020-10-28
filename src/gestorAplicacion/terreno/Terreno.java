@@ -79,7 +79,7 @@ public class Terreno implements Serializable {
 	// Cierre del constructor
 
 	/**
-	 * Metodo que verifica si posee los parametros de nutrientes y nivel de
+	 * Metodo que verifica si posee los parametros de nutrientes, nivel de
 	 * irrigacion necesarios para cultivar el tipo de cultivo correspondiente (papa,
 	 * sandia, mango, banano o fresa), si cumple con los requisitos, agrega a la
 	 * lista cultivoPermitido el tipo si no estaba cultivado
@@ -121,39 +121,62 @@ public class Terreno implements Serializable {
 
 		return cultivoPermitido;
 	}
-
 	// Cierre del metodo getCultivoPermitido
-
+	/**
+	 * Metodo que agrega a la lista culivos permitidos un nuevo tipo de cultivo sembrado
+	 * @param cultivoP nuevo tipo de cultivo sembrado que fue agragado al terreno
+	 */
 	public void agregrarCultivoP(String cultivoP) { // cultivoPermitido
 		this.cultivoPermitido.add(cultivoP);
 	}
-
+	/**
+	 * Metodo que devulve la lista de todos los campesinos que trabajan en un terreno especifico
+	 * @return LinkedList<Campesino> lista con las instancias de los campesinos que trabajan en el terreno
+	 */
 	public LinkedList<Campesino> getCampesinos() {
 		return this.campesinos;
 	}
-
+	/**
+	 * Metodo que agrega un campesino a la lista de los campesinos que actualmente trabajan en el terreno
+	 * @param campesino, Representa el campesino contratado
+	 */
 	public void agregarCampesino(Campesino campesino) {
 		this.campesinos.add(campesino);
 	}
-
+	/**
+	 * Metodo que devuelve todos los tipos de cultivos que se encuentran sembrados en el terreno
+	 * @return LinkedList<Srting> la lista contiene en forma de texto los tipos de cultivos
+	 */
 	public LinkedList<String> getTipos() {
 		return this.tipos;
 	}
-
+	/**
+	 * Metodo que agrega un tipo de cultivo (papa, sandia, mango, banano o fresa) a la lista de los tipos
+	 * @param tipo, contiene los tipos de cultivos
+	 */
 	public void agregarTipo(String tipo) {
 		this.tipos.add(tipo);
 	}
-
+	/**
+	 * Metodo que devuelve una lista con todas las instancias de la clase Cultivo {@link Cultivo}
+	 * @return LinkedList<Cultivo> lista que guarda todos los cultivos sembrados en un Terreno
+	 */
 	public LinkedList<Cultivo> getCultivos() {
 		return this.cultivos;
 	}
-
+	/**
+	 * Metodo que agrega un nuevo cultivo sembrado y reduce el tamano disponible del Terreno
+	 * @param cultivo que se va a sembrar en el terreno
+	 */
 	public void agregarCultivo(Cultivo cultivo) {
 		this.cultivos.add(cultivo);
 		tamanoDisponible -= cultivo.getTamano();
 	}
-
-	public static LinkedList<Terreno> getTerreno() {
+	/**
+	 * Metodo que devuelve todos los terrenos que han sido creados
+	 * @return LinkedList<Terreno> contiene todos los terrenos creados
+	 */
+	public static LinkedList<Terreno> getTerrenos() {
 		return terrenosTotales;
 	}
 

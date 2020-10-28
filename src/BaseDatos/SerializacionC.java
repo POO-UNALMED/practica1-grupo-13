@@ -34,7 +34,7 @@ public class SerializacionC {
 			entradas = new ObjectInputStream(new FileInputStream(fichero.getAbsolutePath() + "\\src\\BaseDatos\\temp\\Terrenos.txt"));
 			Objeto = entradas.readObject();
 			while (Objeto != null) {
-				Terreno.getTerreno().add((Terreno) Objeto);
+				Terreno.getTerrenos().add((Terreno) Objeto);
 				Terreno tempTerreno = (Terreno) Objeto;
 				if (tempTerreno.getAgronomo()!=null) {
 					Agronomo.getAgronomos().add(tempTerreno.getAgronomo());

@@ -298,4 +298,11 @@ public class Cultivo implements Serializable{
 		}
 	}
 	//Cierre del metodo toString
+	public boolean estaAmenzado() {
+		return this.getAmenaza() != null;
+	}
+	
+	public boolean tieneTamano() {
+		return this.getTamano() > 0;
+	}
 }

@@ -27,8 +27,8 @@ public class SerializacionG {
 		try {
 			entradas = new ObjectOutputStream(
 					new FileOutputStream(fichero.getAbsolutePath() + "\\src\\BaseDatos\\temp\\Terrenos.txt"));
-			for (int i = 0; i < Terreno.getTerreno().size(); i++) {
-				Terreno terreno = Terreno.getTerreno().get(i);
+			for (int i = 0; i < Terreno.getTerrenos().size(); i++) {
+				Terreno terreno = Terreno.getTerrenos().get(i);
 				entradas.writeObject(terreno);
 			}
 			entradas.close();
