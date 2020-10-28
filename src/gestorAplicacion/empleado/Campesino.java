@@ -14,7 +14,6 @@ public class Campesino extends Empleado implements Serializable{
 	 */
 	public Campesino() {
 	}
-	//Cierre del constructor
 	/**
 	 * Constructor para crear una instancia de Empleado
 	 * Establece a una instancia de Terreno el campesino que va a trabajar en el
@@ -28,7 +27,6 @@ public class Campesino extends Empleado implements Serializable{
 		super(nombre, sueldo, cedula, terreno);
 		terreno.agregarCampesino(this);
 	}
-	//Cierre del constructor
 	/**
 	 * Metodo renunciar, que genera un numero aleatorio x (entre 0 y 1) que representa 
 	 * una probabilidad del 15% de que un empleado pueda renunciar, obtiene la lista de todos
@@ -50,7 +48,6 @@ public class Campesino extends Empleado implements Serializable{
 			}
 		}
 	}
-	// Cierre del metodo renunciar
 	/**
 	 * 
 	 * @param opcionElegida
@@ -59,7 +56,6 @@ public class Campesino extends Empleado implements Serializable{
 	public void renunciar(int opcionElegida, int opcionElegida2) {
 		Terreno.getTerrenos().get(opcionElegida).getCampesinos().remove(opcionElegida2);
 	}
-	// Cierre del metodo renunciar
 	/**
 	 * Metodo que muestra todas las instancias de Campesino creadas
 	 * @return devuleve un String con las cedulas de cada uno de los Campesinos en todos
@@ -72,7 +68,6 @@ public class Campesino extends Empleado implements Serializable{
 		}
 		return(muestra);
 	}
-	// Cierre del metodo mostarCampesinos
 	/**
 	 * Metodo toString
 	 * @return devuelve un string con todos los atributos de la instancia Campesino
@@ -82,7 +77,6 @@ public class Campesino extends Empleado implements Serializable{
 		return("\n" + "El campesino con:" + "\n" + "Nombre: " + this.getNombre() + "\n" + "Cedula: " + this.getCedula() + "\n" +
 				"Sueldo: " + this.getSueldo() + "\n" + "Vinculado a terreno: " + this.getTerreno().getId());
 	}
-	// Cierre del metodo toString
 	/**
 	 * Metodo recolectar, que recoge toda la cantidad sembrada en cultivo, aumentando el tamano
 	 * disponible en el terreno que estaba, luego eliminando el cultivo para que pueda
@@ -108,9 +102,7 @@ public class Campesino extends Empleado implements Serializable{
 		this.getTerreno().getCultivos().remove(cultivo);
 		this.getTerreno().getTipos().remove(cultivo.getTipoCultivo());
 		Cultivo.getCultivos().remove(cultivo);
-	}
-	// Cierre del metodo Recolectar
-	
+	}	
 	/**
 	 * Metodo que recibe el terreno que se quiere fertilizar para poder sembrar cultivos
 	 * en el
@@ -119,6 +111,5 @@ public class Campesino extends Empleado implements Serializable{
 	public void fertilizar(Terreno terreno) {
 		terreno.fertilizarTerreno();
 	}
-	// Cierre del metodo fertilizar 
 }
  
