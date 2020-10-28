@@ -8,9 +8,12 @@ import gestorAplicacion.terreno.*;
  * o Plagas que pueden o no atacar a los cultvios sembrados en los terrenos
  */
 public class Amenaza implements Serializable, IAmenaza {
-	//Atributos de la clase
+	/** El tipo de la amenaza cuando se crea  que pueden ser de tres tipos Hongos, Malezas
+	 * o Plagas */
 	private String tipoAmenaza;
+	/** Cultivo al cual esta atacando la amenaza*/
 	private Cultivo cultivo; 
+	/** Cantidad de hectareas que la amenaza le quita al cultivo que esta atacando*/
 	private double cantidad;
 	
 	/**
