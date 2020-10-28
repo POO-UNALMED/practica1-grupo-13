@@ -34,7 +34,7 @@ public class Cultivo implements Serializable{
 	 * @param nitrogeno, El parametro nitrogeno representa el nitrogeno que tiene el cultivo
 	 * @param potasio, El parametro potasio representa el potasio que tiene el cultivo
 	 * @param fosforo, El parametro fosforo representa el fosforo que tiene el cultivo
-	 * @param irrigacion, El parametro irrigacion representa el irrigacion que tiene el cultivo
+	 * @param irrigacion, El parametro irrigacion representa la irrigacion que tiene el cultivo
 	 * @param terreno, El parametro terreno representa el terreno en el cual se siembra el cultivo
 	 */
 	public Cultivo(String tipoCultivo, int tamano, double nitrogeno, double potasio, double fosforo, double irrigacion, Terreno terreno) {
