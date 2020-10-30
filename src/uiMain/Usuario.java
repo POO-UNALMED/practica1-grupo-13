@@ -277,7 +277,7 @@ public class Usuario {
 							campesino.recolectar(cultivo);
 						} else {
 							System.out.println(
-									"El terreno se encuentra bajo una amenaza, por favor, exterminela para cosechar el cultivo");
+									"El cultivo se encuentra bajo una amenaza, por favor, exterminela para cosecharlo");
 						}
 
 					} else {
@@ -365,6 +365,4 @@ public class Usuario {
 			}
 		} while (opcionElegida != 8);
 	}
-
-
 }
